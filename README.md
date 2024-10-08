@@ -6,9 +6,9 @@
 ## Abstract
 
 The key works are:
-1. T. Pimentel and R. Cotterell. A Bayesian Framework for Information-Theoretic Probing.
-2. E. Voita and I. Titov. Information-theoretic probing with minimum description length.
-3. K. Stan ́czak, L.T. Hennigen, A. Williams, R. Cotterell, and I. Augenstein. A latent-variable model for intrinsic probing.
+1. T. Pimentel and R. Cotterell. [A Bayesian Framework for Information-Theoretic Probing](https://arxiv.org/abs/2109.03853.).
+2. E. Voita and I. Titov. [Information-theoretic probing with minimum description length](https://arxiv.org/abs/2003.12298).
+3. K. Stan ́czak, L.T. Hennigen, A. Williams, R. Cotterell, and I. Augenstein. [A latent-variable model for intrinsic probing](https://arxiv.org/abs/2201.08214).
 
 
 ## Repository creation
