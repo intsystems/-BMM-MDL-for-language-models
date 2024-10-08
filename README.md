@@ -1,15 +1,15 @@
-# Project template 
+# MDL for language model evaluation
 
 [<img src="coverage-badge.svg">](https://github.com/intsystems/SoftwareTemplate-simplified/tree/master)
 [<img src="https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white">](https://intsystems.github.io/SoftwareTemplate-simplified)
 
-
-
-
 ## Abstract
-This is a simplified template for software/libraries at Intelligent Systems.
 
-The template is inherited from [Project template](https://github.com/intsystems/ProjectTemplate)
+The key works are:
+1. T. Pimentel and R. Cotterell. A Bayesian Framework for Information-Theoretic Probing.
+2. E. Voita and I. Titov. Information-theoretic probing with minimum description length.
+3. K. Stan ́czak, L.T. Hennigen, A. Williams, R. Cotterell, and I. Augenstein. A latent-variable model for intrinsic probing.
+
 
 ## Repository creation
 After repository creation (recommended way is not to fork, but use is as a template), please do the steps from [this manual](https://github.com/intsystems/.github/blob/main/profile/repository_structure_rtfm.md).
