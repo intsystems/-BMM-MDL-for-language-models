@@ -3,7 +3,9 @@
 [<img src="coverage-badge.svg">](https://github.com/intsystems/SoftwareTemplate-simplified/tree/master)
 [<img src="https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white">](https://intsystems.github.io/SoftwareTemplate-simplified)
 
-## Abstract
+## Motivation
+
+## Key Works
 
 The key works are:
 1. T. Pimentel and R. Cotterell. [A Bayesian Framework for Information-Theoretic Probing](https://arxiv.org/abs/2109.03853.).
@@ -12,7 +14,15 @@ The key works are:
 
 
 ## Repository creation
-After repository creation (recommended way is not to fork, but use is as a template), please do the steps from [this manual](https://github.com/intsystems/.github/blob/main/profile/repository_structure_rtfm.md).
+problib/
+├── __init__.py
+├── utils.py
+├── probing/
+    ├── __init__.py
+    ├── optimizer.py
+    ├── mdl/
+    ├── nn/
+    ├── bayesian/
 
 ## Master branch
 By desing, master branch is protected from committing.  You should make pull requests to make changes into it.
