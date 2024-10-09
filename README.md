@@ -14,10 +14,10 @@ The key works are:
 3. K. Stan ́czak, L.T. Hennigen, A. Williams, R. Cotterell, and I. Augenstein. [A latent-variable model for intrinsic probing](https://arxiv.org/abs/2201.08214).
 
 ## Members
-[Anastasia Voznyuk](https://github.com/natriistorm)
-[Nikita Okhotnikov](https://github.com/Wayfarer123)
-[Anna Grebennikova]()
-[Yuri Sapronov](https://github.com/Sapr7)
+1. [Anastasia Voznyuk](https://github.com/natriistorm)
+2. [Nikita Okhotnikov](https://github.com/Wayfarer123)
+3. [Anna Grebennikova]()
+4. [Yuri Sapronov](https://github.com/Sapr7)
 
 ## Repository creation
 ```
