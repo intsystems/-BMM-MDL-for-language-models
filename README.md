@@ -14,12 +14,12 @@ The key works are:
 3. K. Stan ́czak, L.T. Hennigen, A. Williams, R. Cotterell, and I. Augenstein. [A latent-variable model for intrinsic probing](https://arxiv.org/abs/2201.08214).
 
 ## Members
-1. [Anastasia Voznyuk](https://github.com/natriistorm)
-2. [Nikita Okhotnikov](https://github.com/Wayfarer123)
-3. [Anna Grebennikova]()
-4. [Yuri Sapronov](https://github.com/Sapr7)
+1. [Anastasia Voznyuk](https://github.com/natriistorm)  (Project wrapping, Blog Post, Algorithm 1)
+2. [Nikita Okhotnikov](https://github.com/Wayfarer123) (Library Wrapping, , Algorithm 2)
+3. [Anna Grebennikova]() (Base code implementation, Demo completion, Algorithm 2)
+4. [Yuri Sapronov](https://github.com/Sapr7) (Tests writing, Documentation Writing), Algorithm 3)
 
-## Repository creation
+## Repository structure
 ```
 problib/
 ├── __init__.py
@@ -31,6 +31,21 @@ problib/
     ├── nn/
     ├── bayesian/
 ```
+
+## Project structure
+
+
+## Stack
+**NLP Framework**: jiant, spaCy, Flair
+
+**Basic code**: PyTorch
+
+**Configs to interact with library**: YAML
+
+**Bayesian instruments**: BayesPy
+
+**Deploy**: HF Spaces, Gradio
+
 
 ## Master branch
 By desing, master branch is protected from committing.  You should make pull requests to make changes into it.
