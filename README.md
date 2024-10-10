@@ -43,6 +43,8 @@ tests/
 ## Project scheme
 ![Scheme](pics/scheme.png)
 
+**Model** class will be the parent class for **MDL**, **Bayesian** and **Latent_Var**. **MDL**, in turn. will be parent **MDLOnlineProbing** and **MDLVariationalProbing**.
+
 ## Stack
 **NLP Framework**: jiant, spaCy, Flair
 
