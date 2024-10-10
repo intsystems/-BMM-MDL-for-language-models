@@ -32,8 +32,8 @@ problib/
     ├── bayesian/
 ```
 
-## Project structure
-
+## Project scheme
+[!pics/scheme.png](Scheme)
 
 ## Stack
 **NLP Framework**: jiant, spaCy, Flair
