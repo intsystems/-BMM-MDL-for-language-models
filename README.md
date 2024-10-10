@@ -22,18 +22,26 @@ The key works are:
 ## Repository structure
 ```
 problib/
-├── __init__.py
-├── utils.py
-├── probing/
     ├── __init__.py
-    ├── optimizer.py
+    ├── utils.py
+    ├── setup.py
     ├── mdl/
+        ├── __init__.py
+        ├── online_probing.py
+        ├── variational_probing.py
     ├── nn/
-    ├── bayesian/
+        ├── __init__.py
+        ├── probing.py
+    ├── bayesian
+        ├── __init__.py
+        ├── probing.py
+tests/
+    ├── tests.py
+
 ```
 
 ## Project scheme
-[!pics/scheme.png](Scheme)
+![Scheme](pics/scheme.png)
 
 ## Stack
 **NLP Framework**: jiant, spaCy, Flair
