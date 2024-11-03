@@ -4,6 +4,8 @@ import torch
 
 # TODO: implement losses?
 # TODO: implement datasets and dataloaders
+# TODO: implement MDL calculation
+# TODO: implement metrics
 
 class MDLDataset_Base(Dataset):
     def __init__(self, data_path,):
