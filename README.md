@@ -19,6 +19,10 @@ The key works are:
 3. [Anna Grebennikova]() (Base code implementation, Demo completion, Algorithm 2)
 4. [Yuri Sapronov](https://github.com/Sapr7) (Tests writing, Documentation Writing), Algorithm 3)
 
+## Blogpost Link
+
+[Overleaf Read-only link to the draft](https://www.overleaf.com/read/mhznbfwfrgpg#050aed)
+
 ## Repository structure
 ```
 problib/
