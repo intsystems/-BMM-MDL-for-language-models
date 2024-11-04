@@ -19,7 +19,7 @@ class MLPTrainer(Trainer):
         self.entropy_scale = entropy_scale
         self.l1_weight = l1_weight
         self.l2_weight = l2_weight
-        self.sampler = model.sampler  # Use sampler from the model
+        self.sampler = model.sampler  
 
     def compute_loss(
         self, 
