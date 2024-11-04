@@ -51,3 +51,5 @@ class BaseModel(nn.Module, ABC):
     def forward(self, input_ids, attention_mask=None):
         return self.model(input_ids=input_ids, attention_mask=attention_mask)
 
+    def eval(self):
+	raise NotImplementedError
