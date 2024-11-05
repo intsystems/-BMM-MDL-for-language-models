@@ -8,10 +8,19 @@ from .base import BaseModel
 class MLP(BaseModel):
     # pylint: disable=too-many-instance-attributes,arguments-differ
 
-    name = 'mlp'
+    name = "mlp"
 
-    def __init__(self, task, embedding_size=768, n_classes=3, hidden_size=5,
-                 nlayers=1, dropout=0.1, representation=None, n_words=None):
+    def __init__(
+        self,
+        task,
+        embedding_size=768,
+        n_classes=3,
+        hidden_size=5,
+        nlayers=1,
+        dropout=0.1,
+        representation=None,
+        n_words=None,
+    ):
         # pylint: disable=too-many-arguments
         super().__init__()
 
@@ -25,7 +34,7 @@ class MLP(BaseModel):
         self.n_words = n_words
         self.task = task
 
-        if self.representation in ['onehot', 'random']:
+        if self.representation in ["onehot", "random"]:
             self.build_embeddings(n_words, embedding_size)
 
         self.mlp = self.build_mlp()
@@ -35,13 +44,13 @@ class MLP(BaseModel):
         self.criterion = nn.CrossEntropyLoss()
 
     def build_embeddings(self, n_words, embedding_size):
-        if self.task == 'dep_label':
+        if self.task == "dep_label":
             self.embedding_size = int(embedding_size / 2) * 2
             self.embedding = nn.Embedding(n_words, int(embedding_size / 2))
         else:
             self.embedding = nn.Embedding(n_words, embedding_size)
 
-        if self.representation == 'random':
+        if self.representation == "random":
             self.embedding.weight.requires_grad = False
 
     def build_mlp(self):
@@ -61,7 +70,7 @@ class MLP(BaseModel):
         return nn.Sequential(*mlp)
 
     def forward(self, x):
-        if self.representation in ['onehot', 'random']:
+        if self.representation in ["onehot", "random"]:
             x = self.get_embeddings(x)
 
         x_emb = self.dropout(x)
@@ -99,25 +108,35 @@ class MLP(BaseModel):
 
     def get_args(self):
         return {
-            'nlayers': self.nlayers,
-            'hidden_size': self.hidden_size,
-            'embedding_size': self.embedding_size,
-            'dropout': self.dropout_p,
-            'n_classes': self.n_classes,
-            'representation': self.representation,
-            'n_words': self.n_words,
-            'task': self.task,
+            "nlayers": self.nlayers,
+            "hidden_size": self.hidden_size,
+            "embedding_size": self.embedding_size,
+            "dropout": self.dropout_p,
+            "n_classes": self.n_classes,
+            "representation": self.representation,
+            "n_words": self.n_words,
+            "task": self.task,
         }
 
     @staticmethod
     def print_param_names():
         return [
-            'n_layers', 'hidden_size', 'embedding_size', 'dropout',
-            'n_classes', 'representation', 'n_words',
+            "n_layers",
+            "hidden_size",
+            "embedding_size",
+            "dropout",
+            "n_classes",
+            "representation",
+            "n_words",
         ]
 
     def print_params(self):
         return [
-            self.nlayers, self.hidden_size, self.embedding_size, self.dropout_p,
-            self.n_classes, self.representation, self.n_words
+            self.nlayers,
+            self.hidden_size,
+            self.embedding_size,
+            self.dropout_p,
+            self.n_classes,
+            self.representation,
+            self.n_words,
         ]
