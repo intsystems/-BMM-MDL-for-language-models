@@ -4,10 +4,7 @@ from transformers import AutoModel, AutoTokenizer
 
 
 class VariationalProbingModel(nn.Module):
-    def __init__(
-        self,
-        pretrained_path="D:/models/roberta-base"
-    ):  
+    def __init__(self, pretrained_path="D:/models/roberta-base"):
         super().__init__()
         self.model = AutoModel.from_pretrained(pretrained_path)
         self.model.pooler.dense = LinearGroupNJ(
@@ -21,5 +18,3 @@ class VariationalProbingModel(nn.Module):
 
     def eval(self):
         raise NotImplementedError
-
-

@@ -7,20 +7,24 @@ import torch
 # TODO: implement MDL calculation
 # TODO: implement metrics
 
+
 class MDLDataset_Base(Dataset):
-    def __init__(self, data_path,):
+    def __init__(
+        self,
+        data_path,
+    ):
         super().__init__()
         self.data = self._read_data(data_path)
-    
+
     def _read_data(self, data_path):
         raise NotImplementedError
-    
+
     def __len__(self):
         return len(self.data)
-    
+
     def __get_item__(self, idx):
         raise NotImplementedError
-    
+
 
 class MDLDataset_POSTagging(MDLDataset_Base):
     def __init__(self, *args, **kwargs):
@@ -50,7 +54,7 @@ class Collator:
             self.tokenizer_kwargs["truncation"] = truncation
         if self.tokenizer_kwargs.get("add_special_tokens", None) is None:
             self.tokenizer_kwargs["add_special_tokens"] = add_special_tokens
-    
+
     def __call__(self, batch):
         texts = [elem["text"] for elem in batch]
         labels = [elem["label"] for elem in batch]
@@ -59,6 +63,5 @@ class Collator:
 
         input_ids = tokenized["input_ids"]
         attention_mask = tokenized["attention_mask"]
-    
+
         return input_ids, attention_mask, labels
-    
