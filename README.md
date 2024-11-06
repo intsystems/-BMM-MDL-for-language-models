@@ -45,7 +45,7 @@ tests/
 ```
 
 ## Project scheme
-![Scheme](pics/scheme.png)
+![Scheme](pics/scheme_2tl.png)
 
 **Model** class will be the parent class for
 1. **MDL**

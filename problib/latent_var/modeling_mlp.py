@@ -4,21 +4,22 @@ from transformers import PretrainedConfig
 from .samplers import get_sampler
 from .base import BaseModel
 
+
 class MLPConfig(PretrainedConfig):
     model_type = "mlp_classifier"
-    
+
     def __init__(
-        self, 
-        K: int,  
-        input_dim: int = 768, 
-        hidden_dim: int = 256, 
-        output_dim: int = 10, 
-        num_layers: int = 2, 
-        sampler_type: str = "poisson", 
+        self,
+        K: int,
+        input_dim: int = 768,
+        hidden_dim: int = 256,
+        output_dim: int = 10,
+        num_layers: int = 2,
+        sampler_type: str = "poisson",
         **kwargs
     ):
         super().__init__(**kwargs)
-        
+
         self.input_dim = input_dim
         self.hidden_dim = hidden_dim
         self.output_dim = output_dim
@@ -43,17 +44,18 @@ class MLPClassifier(nn.Module):
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         return self.layers(x)
 
+
 class ProbingModel(BaseModel):
-    name = 'probing_model'
+    name = "probing_model"
 
     def __init__(self, config: MLPConfig):
         super().__init__()
         self.config = config
         self.sampler = get_sampler(config.sampler_type, config.D, config.K)
         self.classifier = MLPClassifier(config)
-    
+
     def forward(self, x: torch.Tensor) -> torch.Tensor:
-        mask = self.sampler.sample(x.size(0)) 
-        masked_x = x * mask 
+        mask = self.sampler.sample(x.size(0))
+        masked_x = x * mask
         logits = self.classifier(masked_x)
         return logits
