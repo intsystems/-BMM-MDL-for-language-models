@@ -1,0 +1,26 @@
+site_name: "MDL Library"
+theme:
+  name: "material"
+
+nav:
+  - Home: index.md
+  - Online Coding: online.md
+  - Variational Coding: variational.md
+  - Latent Variable Probing: latent_var.md
+  - Bayesian approach: bayes.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.betterem
+  - pymdownx.tilde
+
+extra_css:
+  - assets/stylesheets/extra.css
+
