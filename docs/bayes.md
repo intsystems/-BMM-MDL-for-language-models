@@ -40,7 +40,14 @@ model = BayesianProbingModel(belief_model,
                              train_config)
 
 # Set up the trainer for model training
-trainer =
+trainer = MLPTrainer(
+    model=model,
+    train_dataset=train_dataset,  # Training dataset
+    mc_samples=5,  # Monte Carlo samples for likelihood estimation
+    entropy_scale=1e-3,  # Regularization scale for entropy
+    l1_weight=1e-5,  # Weight for L1 regularization
+    l2_weight=1e-5  # Weight for L2 regularization
+)
 
 # Train the model
 trainer.train()
