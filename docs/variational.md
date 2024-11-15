@@ -76,9 +76,9 @@ model = trainer.train(
 )
 
 # Get the evaluation results
-val_metrics_mean = trainer._metrics
+val_metrics = trainer._metrics
 
 # Get testing results
-test_metrics_mean, _ = trainer.evaluate(test_loader)
+test_metrics = trainer.evaluate(test_loader)
 
 ```
