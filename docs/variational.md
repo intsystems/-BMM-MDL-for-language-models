@@ -14,9 +14,7 @@ See 2.2.1 Variatonal Code in original [paper](https://arxiv.org/pdf/2003.12298).
 
 ## 🚀 Usage Guide
 
-Below is a step-by-step guide to implementing Bayesian Agents belief approach using an MLP configuration.
-
-In the example, we will solve a task of POS-tagging, however it can be applied to classification task as well.
+Below is a step-by-step usage example of the Variational MDL probing for POS-tagging task
 
 ```python
 from problib.mdl.variational_probing import VariationalProbingModel
