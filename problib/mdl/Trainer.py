@@ -203,6 +203,8 @@ class Trainer:
                 for metric in self.train_config.get("eval_metrics", []):
                     metrics_mean[metric] = np.mean([m[metric] for m in metrics])
 
+                return metrics_mean
+
         else:
             warnings.warn("No validation data provided, return empty val metrics", UserWarning)
             return {}
