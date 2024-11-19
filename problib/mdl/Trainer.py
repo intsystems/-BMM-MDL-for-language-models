@@ -28,6 +28,14 @@ class Trainer:
             self.model = model
         if self.model is None:
             raise ValueError("No model provided")
+        
+        if lr is not None:
+            self.train_config["lr"] = lr
+        elif "lr" in self.train_config:
+            lr = self.train_config["lr"]
+        else:
+            warnings.warn("No learning rate provided. Defaulting to 1e-3", UserWarning)
+            lr = 1e-3
 
         if optimizer is not None:
             if isinstance(optimizer, torch.optim.Optimizer):
@@ -76,14 +84,6 @@ class Trainer:
         if variational is not None:
             self.train_config["variational"] = variational
 
-        if lr is not None:
-            self.train_config["lr"] = lr
-        elif "lr" in self.train_config:
-            lr = self.train_config["lr"]
-        else:
-            warnings.warn("No learning rate provided. Defaulting to 1e-3", UserWarning)
-            lr = 1e-3
-
         if evaluate_every is not None:
             self.train_config["evaluate_every"] = evaluate_every
         elif "evaluate_every" in self.train_config:
@@ -130,11 +130,8 @@ class Trainer:
             self.model.train()
 
             output = self._forward(batch, device=device)
-
-            if "last_hidden_state" in output and isinstance(loss_function, nn.Module):
-                output = output["last_hidden_state"]
-
-            loss = loss_function(output, batch[-1])
+            
+            loss = loss_function(output.view(-1, output.shape[-1]), batch[-1].to(device).view(-1))
 
             if variational:
                 kl_loss = sum([m.kl_divergence() for m in bayes_modules])
@@ -153,20 +150,17 @@ class Trainer:
 
         return preds
     
-    def _calulate_metrics(self, outputs, batch):
+    def _calulate_metrics(self, output, batch, device="cuda"):
         metrics_to_calulate = self.train_config.get("eval_metrics", [])
         metrics = {}
 
-        if "last_hidden_state" in outputs:
-            pred = outputs["last_hidden_state"]
-        else:
-            pred = outputs
-
         for m in metrics_to_calulate:
             if m == "description_length":
-                metrics[m] = nn.CrossEntropyLoss(reduction="mean")(pred, batch[0]).detach().cpu().numpy() + self.model.kl_divergence()
+                ce_part = nn.CrossEntropyLoss()(output.view(-1, output.shape[-1]), batch[-1].to(device).view(-1)).detach().cpu().numpy()
+                kl_part = self.model.kl_divergence().detach().cpu().numpy()
+                metrics[m] = ce_part + kl_part
             elif m == "accuracy":
-                metrics[m] = (pred.argmax(dim=1) == batch[-1]).mean().detach().cpu().numpy()
+                metrics[m] = (output.argmax(dim=1) == batch[-1]).mean().detach().cpu().numpy()
             else:
                 warnings.warn(f"Unknown metric: {m}", UserWarning)
         
@@ -183,18 +177,22 @@ class Trainer:
                 device = next(self.model.parameters()).device
 
                 metrics = []
-                for batch in tqdm(val_loader, leave=False, desc="training batch"):
+                for batch in tqdm(val_loader, leave=False, desc="eval batch"):
                     self.model.train()
 
                     output = self._forward(batch, device=device)
                     
-                    self._calulate_metrics(output, batch)
-                    batch_metrics = self._calulate_metrics(output, batch)
+                    batch_metrics = self._calulate_metrics(output, batch, device)
 
                     if not self.train_config.get("variational", False) and loss_function is not None:
-                        if "last_hidden_state" in output and isinstance(loss_function, nn.Module):
-                            output = output["last_hidden_state"]
-                        loss = loss_function(output, batch[-1])
+                        if isinstance(loss_function, str):
+                            if loss_function == "crossentropy":
+                                loss_function = nn.CrossEntropyLoss()
+                            elif loss_function == "mse":
+                                loss_function = nn.MSELoss()
+                            else:
+                                raise ValueError(f"Unknown loss function: {loss_function}")
+                        loss = loss_function(output.view(-1, output.shape[-1]), batch[-1].to(device).view(-1))
                         batch_metrics["loss"] = loss
 
                     metrics.append(batch_metrics)

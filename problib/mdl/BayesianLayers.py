@@ -135,8 +135,12 @@ class LinearGroupNJ(Module):
             sampling=self.training,
         )
 
+        while len(x.size()) > len(z.size()):
+            z = z.unsqueeze(1)
+
         # apply local reparametrisation trick see [1] Eq. (6)
         # to the parametrisation given in [3] Eq. (6)
+
         xz = x * z
         mu_activations = F.linear(xz, self.weight_mu, self.bias_mu)
         var_activations = F.linear(
