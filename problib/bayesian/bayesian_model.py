@@ -1,8 +1,34 @@
 import math
 import torch
 import torch.nn as nn
+from transformers import PretrainedConfig
+from base import BaseModel
 
-from .base import BaseModel
+
+class MLPConfig(PretrainedConfig):
+    model_type = "mlp_classifier"
+
+    def __init__(
+        self,
+        K: int,
+        input_dim: int = 768,
+        hidden_dim: int = 256,
+        output_dim: int = 3,
+        num_layers: int = 2,
+        dropout: float = 0.1,
+        vocab_size: int = 30522,
+        **kwargs
+    ):
+        super().__init__(**kwargs)
+
+        self.input_dim = input_dim
+        self.hidden_dim = hidden_dim
+        self.output_dim = output_dim
+        self.num_layers = num_layers
+        self.D = input_dim
+        self.K = K
+        self.dropout = dropout
+        self.vocab_size = vocab_size
 
 
 class MLP(BaseModel):
@@ -12,46 +38,21 @@ class MLP(BaseModel):
 
     name = "mlp"
 
-    def __init__(
-        self,
-        task,
-        embedding_size=768,
-        n_classes=3,
-        hidden_size=5,
-        nlayers=1,
-        dropout=0.1,
-        representation=None,
-        n_words=None,
-    ):
+    def __init__(self, task, config: MLPConfig):
         """
         Initialize the model.
         Parameters:
             task (str): The task to perform.
-            embedding_size (int): The size of the embedding.
-            n_classes (int): The number of classes.
-            hidden_size (int): The size of the hidden layer.
-            nlayers (int): The number of layers.
-            dropout (float): The dropout rate.
-            representation (str): The representation to use.
-            n_words (int): The number of words.
+            config (MLPConfig): The configuration for the model.
         """
         super().__init__()
 
-        self.dropout_p = dropout
-        self.embedding_size = embedding_size
-        self.hidden_size = hidden_size
-        self.nlayers = nlayers
-        self.n_classes = n_classes
-        self.representation = representation
-        self.n_words = n_words
-        self.task = task
-
         if self.representation in ["onehot", "random"]:
-            self.build_embeddings(n_words, embedding_size)
+            self.build_embeddings(self.vocab_size, self.hidden_dim)
 
         self.mlp = self.build_mlp()
-        self.out = nn.Linear(self.final_hidden_size, n_classes)
-        self.dropout = nn.Dropout(dropout)
+        self.out = nn.Linear(self.final_hidden_size, self.output_dim)
+        self.dropout = nn.Dropout(self.dropout)
 
         self.criterion = nn.CrossEntropyLoss()
 
