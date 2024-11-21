@@ -12,6 +12,9 @@ import torch.optim as optim
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
 
 class BayesianProbingModel(BaseModel):
+    """
+    Bayesian Probing Model.
+    """
     def __init__(
         self,
         embedding_size = 512,
@@ -24,6 +27,15 @@ class BayesianProbingModel(BaseModel):
         device='cuda'
         
     ):  
+        """
+        Initialize the model.
+        Parameters:
+            embedding_size (int): The size of the embedding.
+            n_classes (int): The number of classes.
+            hidden_size (int): The size of the hidden layer.
+            n_layers (int): The number of layers.
+            dropout (float): The dropout rate.
+        """ 
         super().__init__()
         self.model = MLP(embedding_size=embedding_size,
                                     n_classes=n_classes,
@@ -35,11 +47,27 @@ class BayesianProbingModel(BaseModel):
         self.model.to(device)
 
     def forward(self, input_ids, attention_mask=None):
+        """
+        Forward pass of the model.
+        Parameters:
+            input_ids (torch.Tensor): The input ids of the tokens.
+            attention_mask (torch.Tensor): The attention mask of the tokens.
+        Returns:
+            torch.Tensor: The output of the model.
+        """ 
         if attention_mask:
             return self.model(input_ids=input_ids, attention_mask=attention_mask)
         return self.model(input_ids=input_ids)
 
     def _evaluate(self, evalloader, model):
+        """
+        Evaluate the model on the evaluation dataset.
+        Parameters:
+            evalloader (DataLoader): The evaluation dataset.
+            model (BayesianProbingModel): The model to evaluate.
+        Returns:
+            dict: A dictionary containing the evaluation loss and accuracy.
+        """
         dev_loss, dev_acc = 0, 0
         for x, y in evalloader:
             loss, acc = model.eval_batch(x, y)
@@ -54,6 +82,14 @@ class BayesianProbingModel(BaseModel):
 
 
     def evaluate(self, evalloader, model):
+        """
+        Evaluate the model on the evaluation dataset.
+        Parameters:
+            evalloader (DataLoader): The evaluation dataset.
+            model (BayesianProbingModel): The model to evaluate.
+        Returns:
+            dict: A dictionary containing the evaluation loss and accuracy.
+        """
         model.eval()
         with torch.no_grad():
             result = self._evaluate(evalloader, model)
@@ -61,6 +97,15 @@ class BayesianProbingModel(BaseModel):
         return result
 
     def train_epoch(self, trainloader, devloader, model, optimizer, train_info):
+        """
+        Train the model for one epoch.
+        Parameters:
+            trainloader (DataLoader): The training dataset.
+            devloader (DataLoader): The development dataset.
+            model (BayesianProbingModel): The model to train.
+            optimizer (torch.optim.Optimizer): The optimizer to use.
+            train_info (TrainInfo): The training information.
+        """
         for x, y in trainloader:
             loss = model.train_batch(x, y, optimizer)
             train_info.new_batch(loss)

@@ -6,7 +6,9 @@ from .base import BaseModel
 
 
 class MLP(BaseModel):
-    # pylint: disable=too-many-instance-attributes,arguments-differ
+    """
+    Multi-layer Perceptron model.
+    """
 
     name = "mlp"
 
@@ -21,10 +23,20 @@ class MLP(BaseModel):
         representation=None,
         n_words=None,
     ):
-        # pylint: disable=too-many-arguments
+        """
+        Initialize the model.
+        Parameters:
+            task (str): The task to perform.
+            embedding_size (int): The size of the embedding.
+            n_classes (int): The number of classes.
+            hidden_size (int): The size of the hidden layer.
+            nlayers (int): The number of layers.
+            dropout (float): The dropout rate.
+            representation (str): The representation to use.
+            n_words (int): The number of words.
+        """
         super().__init__()
 
-        # Save things to the model here
         self.dropout_p = dropout
         self.embedding_size = embedding_size
         self.hidden_size = hidden_size
@@ -44,6 +56,12 @@ class MLP(BaseModel):
         self.criterion = nn.CrossEntropyLoss()
 
     def build_embeddings(self, n_words, embedding_size):
+        """
+        Build the embeddings for the model.
+        Parameters:
+            n_words (int): The number of words.
+            embedding_size (int): The size of the embedding.
+        """
         if self.task == "dep_label":
             self.embedding_size = int(embedding_size / 2) * 2
             self.embedding = nn.Embedding(n_words, int(embedding_size / 2))
@@ -54,6 +72,9 @@ class MLP(BaseModel):
             self.embedding.weight.requires_grad = False
 
     def build_mlp(self):
+        """
+        Build the MLP for the model.
+        """
         if self.nlayers == 0:
             self.final_hidden_size = self.embedding_size
             return nn.Identity()
@@ -70,6 +91,13 @@ class MLP(BaseModel):
         return nn.Sequential(*mlp)
 
     def forward(self, x):
+        """
+        Forward pass of the model.
+        Parameters:
+            x (torch.Tensor): The input tensor.
+        Returns:
+            torch.Tensor: The output tensor.
+        """
         if self.representation in ["onehot", "random"]:
             x = self.get_embeddings(x)
 
@@ -79,6 +107,13 @@ class MLP(BaseModel):
         return logits
 
     def get_embeddings(self, x):
+        """
+        Get the embeddings for the model.
+        Parameters:
+            x (torch.Tensor): The input tensor.
+        Returns:
+            torch.Tensor: The output tensor.
+        """
         x_emb = self.embedding(x)
         if len(x.shape) > 1:
             x_emb = x_emb.reshape(x.shape[0], -1)
@@ -86,6 +121,15 @@ class MLP(BaseModel):
         return x_emb
 
     def train_batch(self, data, target, optimizer):
+        """
+        Train the model for one batch.
+        Parameters:
+            data (torch.Tensor): The input tensor.
+            target (torch.Tensor): The target tensor.
+            optimizer (torch.optim.Optimizer): The optimizer to use.
+        Returns:
+            float: The loss.
+        """
         optimizer.zero_grad()
         mlp_out = self(data)
         loss = self.criterion(mlp_out, target)
@@ -95,6 +139,14 @@ class MLP(BaseModel):
         return loss.item() / math.log(2)
 
     def eval_batch(self, data, target):
+        """
+        Evaluate the model for one batch.
+        Parameters:
+            data (torch.Tensor): The input tensor.
+            target (torch.Tensor): The target tensor.
+        Returns:
+            tuple: A tuple containing the loss and accuracy.
+        """
         mlp_out = self(data)
         loss = self.criterion(mlp_out, target) / math.log(2)
         accuracy = (mlp_out.argmax(dim=-1) == target).float().detach().sum()
@@ -104,9 +156,19 @@ class MLP(BaseModel):
 
     @staticmethod
     def get_norm():
+        """
+        Get the norm of the model.
+        Returns:
+            torch.Tensor: The norm of the model.
+        """
         return torch.Tensor([0])
 
     def get_args(self):
+        """
+        Get the arguments for the model.
+        Returns:
+            dict: A dictionary containing the arguments.
+        """
         return {
             "nlayers": self.nlayers,
             "hidden_size": self.hidden_size,
@@ -120,6 +182,11 @@ class MLP(BaseModel):
 
     @staticmethod
     def print_param_names():
+        """
+        Print the parameter names.
+        Returns:
+            list: A list of parameter names.
+        """
         return [
             "n_layers",
             "hidden_size",
@@ -131,6 +198,11 @@ class MLP(BaseModel):
         ]
 
     def print_params(self):
+        """
+        Print the parameters.
+        Returns:
+            list: A list of parameters.
+        """
         return [
             self.nlayers,
             self.hidden_size,
