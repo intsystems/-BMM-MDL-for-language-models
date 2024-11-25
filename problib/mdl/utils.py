@@ -11,14 +11,24 @@ from nltk.corpus import conll2000
 # TODO: implement metrics
 
 class POSTaggingTokenizer:
+    """
+    Tokenizer for part-of-speech tagging.
+
+    This tokenizer converts words and their part-of-speech tags into IDs and 
+    provides functionality for encoding and decoding tags.
+
+    Attributes:
+        idx2tag (dict): Maps tag IDs to tags.
+        tag2idx (dict): Maps tags to tag IDs.
+        pad_token_id (int): ID for the padding token.
+        bos_token_id (int): ID for the beginning-of-sequence token.
+        eos_token_id (int): ID for the end-of-sequence token.
+        unk_token_id (int): ID for the unknown token.
+    """
     def __init__(self):
         """
-        Constructor for POSTaggingTokenizer class that converts a list of words and their part-of-speech tags into a list of word-ids and tag-ids
-
-        Notes
-        -----
-            Initializes the tag2idx and idx2tag dictionaries and sets the IDs for
-            the special tags <PAD>, <BOS>, <EOS>, and <UNK>.
+        Initializes the POSTaggingTokenizer with special tokens for padding, 
+        beginning-of-sequence, end-of-sequence, and unknown tokens.
         """
         self.idx2tag = {0: '<PAD>', 1: '<BOS>', 2: '<EOS>', 3: '<UNK>'}
         self.pad_token_id = 0
@@ -31,17 +41,14 @@ class POSTaggingTokenizer:
     
     def fit(self, sentences_conll):
         """
-        Learns the tag vocabulary from a list of sentences in the CoNLL format
+        Builds the tag vocabulary from a list of sentences in the CoNLL format.
 
-        Parameters
-        ----------
-        sentences_conll : List[List(tuple)] 
-            A list of sentences where each sentence is a list of tuples (word, tag)
+        Args:
+            sentences_conll (List[List[tuple]]): List of sentences, where each 
+                sentence is a list of (word, tag) tuples.
 
-        Returns
-        -------
-        POSTaggingTokenizer (self)
-            The same tokenizer with the learned tag vocabulary
+        Returns:
+            POSTaggingTokenizer: The fitted tokenizer.
         """
         idx = len(self.idx2tag)
         for s in sentences_conll:
@@ -54,19 +61,16 @@ class POSTaggingTokenizer:
 
     def encode(self, sent_words_with_tags):
         """
-        Converts a list of sentences in the CoNLL format to a list of sentences where
-        each word is replaced with its tag ID. 
+        Encodes a list of words and their tags into IDs.
 
-        Parameters
-        ----------
-        sent_words_with_tags : List[List(tuple)] 
-            A list of sentences represented as a list of tuples (word, tag) (CoNLL format)
+        Args:
+            sent_words_with_tags (List[List[tuple]] or List[tuple]): List of sentences
+                or a single sentence, where each sentence is represented as a list
+                of (word, tag) tuples.
 
         Returns:
-        List[List(tuple)] | List(tuple)
-            A list of sentences where each word is replaced with its tag ID. If the input
-            contains a single sentence, the output is a single sentence, otherwise it
-            is a list of sentences.
+            List[List[tuple]] or List[tuple]: Encoded sentences or a single sentence 
+            with tags replaced by their IDs.
         """
         if isinstance(sent_words_with_tags[0], tuple):
             sent_words_with_tags = [sent_words_with_tags]        
@@ -93,16 +97,13 @@ class POSTaggingTokenizer:
 
     def decode(self, ids):
         """
-        Converts a list of tag IDs to a list of part-of-speech tags
+        Decodes a list of tag IDs into part-of-speech tags.
 
-        Parameters
-        ----------
-        ids (list of int): A list of tag IDs
+        Args:
+            ids (list of int): List of tag IDs.
 
-        Returns
-        -------
-        list
-            A list of POS tags corresponding to the tag IDs
+        Returns:
+            list: List of decoded tags.
         """
         tags = []
         for idx in ids:
@@ -114,25 +115,25 @@ class POSTaggingTokenizer:
 
 
 class MDLDataset_POSTagging(Dataset):
+    """
+    Dataset class for part-of-speech tagging with MDL.
+
+    Args:
+        data_path (str): Path to the dataset file. Must be "conll2000_train.txt" or "conll2000_test.txt".
+        tagging_tokenizer (POSTaggingTokenizer, optional): Tokenizer for POS tagging.
+            If None, a new tokenizer will be created and fitted to the data.
+
+    Attributes:
+        tagging_tokenizer (POSTaggingTokenizer): Tokenizer for encoding tags.
+        data (list): List of encoded sentences with words and tag IDs.
+    """
     def __init__(
         self,
         data_path,
         tagging_tokenizer=None
     ):
         """
-        Constructor for MDLDataset_POSTagging class
-
-        Parameters
-        ----------
-        data_path : str
-            either "conll2000_train.txt" or "conll2000_test.txt" otherwise raises NotImplementedError
-        tagging_tokenizer : POSTaggingTokenizer, optional
-            Part-of-speech tagging tokenizer to use for encoding the data. If None (default), a new tokenizer will be created and fit to the data.
-
-        Returns
-        -------
-        MDLDataset_POSTagging
-            A dataset containing the data in the given file, where each item is a list of words and part-of-speech tags
+        Initializes the MDLDataset_POSTagging class.
         """
         super().__init__()
         self.tagging_tokenizer = tagging_tokenizer
@@ -141,23 +142,16 @@ class MDLDataset_POSTagging(Dataset):
     def _read_data(self, data_path):
                 
         """
-        Reads data from a specified file path, processes it using the tagging_tokenizer that
-        converts each sentence into a list of words with their corresponding tag IDs.
+        Reads and processes data from the specified path.
 
-        Parameters
-        ----------
-        data_path : str
-            The path to the data file. Should contain "conll2000" for the dataset to be processed.
+        Args:
+            data_path (str): Path to the dataset file.
 
-        Returns
-        -------
-        list
-            A list of words with their tag IDs, where each item is a tuple (word, tag_id).
+        Returns:
+            list: List of sentences with words and tag IDs.
 
-        Raises
-        ------
-        NotImplementedError
-            If the dataset specified in the data_path is not "conll2000".
+        Raises:
+            NotImplementedError: If the dataset is not "conll2000".
         """
         if "conll2000" in data_path:
             nltk.download("conll2000")
@@ -171,27 +165,45 @@ class MDLDataset_POSTagging(Dataset):
             raise NotImplementedError("Dataset not implemented for anything other than conll2000")
 
     def __len__(self):
+        """
+        Returns the number of samples in the dataset.
+
+        Returns:
+            int: Number of samples.
+        """
         return len(self.data)
 
     def __getitem__(self, idx):
         """
-        Retrieves an item from the dataset at the specified index.
+        Retrieves a sample by index.
 
-        Parameters
-        ----------
-        idx : int
-            Index of the item to retrieve from the dataset.
+        Args:
+            idx (int): Index of the sample.
 
-        Returns
-        -------
-        tuple
-            A tuple where the first element is a list of words and the second
-            element is a list of corresponding POS tag IDs.
+        Returns:
+            tuple: Words and corresponding tag IDs.
         """
         return [elem[0] for elem in self.data[idx]], [elem[1] for elem in self.data[idx]]
 
 
 class Collator:
+    """
+    Collator class for preparing batches of data.
+
+    Args:
+        tokenizer (transformers.AutoTokenizer): Tokenizer for encoding sentences into token IDs.
+        post_tagging_tokenizer (POSTaggingTokenizer): Tokenizer for encoding POS tags into tag IDs.
+        max_length (int, optional): Maximum length of tokenized sequences. Defaults to 512.
+        padding (bool, optional): Whether to pad sequences. Defaults to True.
+        truncation (bool, optional): Whether to truncate sequences. Defaults to True.
+        add_special_tokens (bool, optional): Whether to add special tokens. Defaults to True.
+        **tokenizer_kwargs: Additional arguments for the tokenizer.
+
+    Attributes:
+        tokenizer (transformers.AutoTokenizer): Tokenizer for encoding sentences.
+        post_tagging_tokenizer (POSTaggingTokenizer): Tokenizer for encoding POS tags.
+        tokenizer_kwargs (dict): Arguments for the tokenizer.
+    """
     def __init__(
         self,
         tokenizer,
@@ -202,26 +214,6 @@ class Collator:
         add_special_tokens=True,
         **tokenizer_kwargs
     ):
-        """
-        Initializes the Collator class for processing batches of data before dataloader.
-
-        Parameters
-        ----------
-        tokenizer : transformers.AutoTokenizer
-            Tokenizer used for encoding sentences into token IDs.
-        post_tagging_tokenizer : POSTaggingTokenizer
-            Tokenizer used for encoding part-of-speech tags into tag IDs.
-        max_length : int, optional
-            Maximum length of the tokenized sequences. Default is 512.
-        padding : bool, optional
-            Whether to pad the sequences to the max_length. Default is True.
-        truncation : bool, optional
-            Whether to truncate the sequences to the max_length. Default is True.
-        add_special_tokens : bool, optional
-            Whether to add special tokens to the sequences. Default is True.
-        **tokenizer_kwargs : dict
-            Additional keyword arguments passed to the tokenizer.
-        """
         self.tokenizer = tokenizer
         self.post_tagging_tokenizer = post_tagging_tokenizer
         self.tokenizer_kwargs = tokenizer_kwargs
@@ -235,24 +227,15 @@ class Collator:
             self.tokenizer_kwargs["add_special_tokens"] = add_special_tokens
 
     def __call__(self, batch):
-        
         """
-        Collates and tokenizes a batch of data, alligns words part-of-speech tags with the corresponding tokens
+        Prepares and tokenizes a batch of data.
 
-        Parameters
-        ----------
-        batch : list
-            List of tuples, where each tuple contains a list of words and a list of
-            corresponding part-of-speech tags.
+        Args:
+            batch (list): List of samples, where each sample is a tuple of words 
+                and their corresponding POS tags.
 
-        Returns
-        -------
-        input_ids : torch.Tensor
-            Tensor of token IDs, shape (batch_size, max_length).
-        attention_mask : torch.Tensor
-            Tensor of attention masks, shape (batch_size, max_length).
-        tags_per_token : torch.Tensor
-            Tensor of part-of-speech tags per token, shape (batch_size, max_length).
+        Returns:
+            tuple: Input IDs, attention masks, and POS tags per token.
         """
         word_lists = [elem[0] for elem in batch]
         tags_per_word = [elem[1] for elem in batch]

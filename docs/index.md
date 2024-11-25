@@ -11,17 +11,11 @@ This library includes multiple approaches, each addressing specific challenges i
 - **[Latent Variable Probing](latent_var.md)**: 
 - **[Bayesian approach](bayes.md)**: 
 
-All models we use in training inherit from the BaseModel
-## Class: `BaseModel`
-
-{{ problib.base.BaseModel }}
 
 
-
-
-Each method page provides:
-- **Theoretical Background**: An accessible overview of the theory behind the approach.
-- **Usage Example**: Code snippets to demonstrate how to apply the method effectively.
+Each method page provides:<br><br>
+- **Theoretical Background**: An accessible overview of the theory behind the approach.<br><br>
+- **Usage Example**: Code snippets to demonstrate how to apply the method effectively.<br><br>
 - **References**: Links to relevant research papers for further reading.
 
 Dive into any approach to learn more, explore theory, and see practical examples.

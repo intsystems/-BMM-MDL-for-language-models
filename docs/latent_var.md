@@ -8,19 +8,68 @@ Approach 1 applies information-theoretic concepts to streamline data compression
 
 ## 📖 Theoretical Background
 
-Put description 
+For an in-depth exploration of the theoretical underpinnings, you can view the [paper](https://arxiv.org/pdf/2201.08214):
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.worker.min.js"></script>
+
+<div id="pdf-container" style="height: 600px; overflow: auto;"></div>
+<script>
+  const url = 'https://arxiv.org/pdf/2201.08214';
+
+  const pdfjsLib = window['pdfjs-dist/build/pdf'];
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.worker.min.js';
+
+  const container = document.getElementById('pdf-container');
+
+  pdfjsLib.getDocument(url).promise.then((pdf) => {
+    console.log(`Total pages: ${pdf.numPages}`);
+    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+      pdf.getPage(pageNum).then((page) => {
+        const viewport = page.getViewport({ scale: 1.5 }); // Adjust scale for better quality
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        container.appendChild(canvas);
+
+        const renderContext = { canvasContext: context, viewport: viewport };
+        page.render(renderContext);
+      });
+    }
+  });
+</script>
+
+
 
 ---
 
-## 📄 Original Research
+## 📚 Documentation
 
+Explore the components of the model used in this approach, organized into sections for clarity.
 
-For an in-depth exploration of the theoretical underpinnings, you can view the paper directly below:
+### 🧠 Model Architecture
+Detailed documentation of the MLP (Multi-Layer Perceptron) model used for latent variable modeling.
 
-<iframe src="https://arxiv.org/pdf/2201.08214" width="100%" height="600px">
-    This browser does not support PDFs. Please download the PDF to view it: 
-    <a href="https://arxiv.org/pdf/2201.08214">Download PDF</a>.
-</iframe>
+::: problib.latent_var.modeling_mlp
+    handler: python
+
+---
+
+### 🎯 Training and Probing
+Comprehensive guide on the trainer used to probe and train the latent variable model.
+
+::: problib.latent_var.probe_trainer
+    handler: python
+
+---
+
+### 🎲 Samplers
+Overview of the sampling methods integrated into this approach.
+
+::: problib.latent_var.samplers
+    handler: python
 
 ---
 
@@ -29,7 +78,7 @@ For an in-depth exploration of the theoretical underpinnings, you can view the p
 Below is a step-by-step guide to implementing Latent Variable approach using an MLP configuration.
 
 ```python
-from mymodule import MLPConfig, ProbingModel, MLPTrainer
+from problib.latent_var import MLPConfig, ProbingModel, MLPTrainer
 
 # Define the model configuration with essential parameters
 config = MLPConfig(

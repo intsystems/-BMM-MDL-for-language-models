@@ -4,6 +4,17 @@ from BayesianLayers import *
 import numpy as np
 
 class Trainer:
+    """
+    Trainer class for training models with various configurations and handling evaluation.
+
+    Args:
+        model (nn.Module, optional): The model to be trained. Defaults to None.
+        train_config (dict, optional): Configuration dictionary for training. Defaults to None.
+    
+    Attributes:
+        model (nn.Module): The model being trained.
+        train_config (dict): Configuration settings for the training process.
+    """
     def __init__(
         self, 
         model=None,
@@ -12,12 +23,9 @@ class Trainer:
         """
         Initialize the Trainer object.
 
-        Parameters
-        ----------
-        model : nn.Module
-            Model to be trained.
-        train_config : dict
-            Configuration for training. Must be provided either here or in .train() method
+        Args:
+            model (nn.Module, optional): The model to train. Defaults to None.
+            train_config (dict, optional): Training configuration dictionary. Defaults to None.
         """
         self.model = model
         self.train_config = train_config if train_config is not None else {}
@@ -36,44 +44,25 @@ class Trainer:
     ):
 
         """
-        Train the model using the provided data loaders and training configuration.
+        Train the model using the provided configuration and data loaders.
 
-        Parameters
-        ----------
-        train_loader : DataLoader, optional
-            DataLoader for training data. Must be provided if not specified in train_config.
-        val_loader : DataLoader, optional
-            DataLoader for validation data. If not provided, evaluation will be skipped.
-        model : nn.Module, optional
-            Model to be trained. If not provided, the model must be set during initialization.
-        n_epochs : int, optional
-            Number of training epochs. If not provided, defaults to the value in train_config or 1.
-        loss_function : str or callable, optional
-            Loss function for training. Defaults to the value in train_config or 'crossentropy' if not specified.
-        optimizer : torch.optim.Optimizer or str, optional
-            Optimizer for training. If not provided, defaults to 'Adam'.
-        variational : bool, optional
-            Whether to use variational training. Defaults to the value in train_config or False if not specified.
-        lr : float, optional
-            Learning rate for the optimizer. Defaults to 1e-3 if not specified.
-        evaluate_every : int, optional
-            Frequency of evaluation during training. Defaults to -1 (no evaluation).
+        Args:
+            train_loader (DataLoader, optional): DataLoader for the training data. Defaults to None.
+            val_loader (DataLoader, optional): DataLoader for validation data. Defaults to None.
+            model (nn.Module, optional): Model to train. Defaults to None.
+            n_epochs (int, optional): Number of training epochs. Defaults to None.
+            loss_function (str or callable, optional): Loss function for training. Defaults to None.
+            optimizer (torch.optim.Optimizer or str, optional): Optimizer to use. Defaults to None.
+            variational (bool, optional): If True, uses variational training. Defaults to None.
+            lr (float, optional): Learning rate for the optimizer. Defaults to None.
+            evaluate_every (int, optional): Evaluation frequency (in epochs). Defaults to -1.
 
-        Returns
-        -------
-        nn.Module
-            The trained model.
+        Returns:
+            nn.Module: The trained model.
 
-        Raises
-        ------
-        ValueError
-            If no model or train_loader is provided.
-            If an unknown optimizer or loss function is specified.
-
-        Warnings
-        --------
-        UserWarning
-            If no learning rate, optimizer, loss_function, n_epochs or val_loader provided.
+        Raises:
+            ValueError: If no model or training loader is provided.
+            ValueError: If an unknown optimizer or loss function is specified.
         """
         if model is not None:
             self.model = model
@@ -185,21 +174,15 @@ class Trainer:
         optimizer
     ):
         """
-        Train the model for one epoch.
+        Perform one epoch of training.
 
-        Parameters
-        ----------
-        train_loader: torch.utils.data.DataLoader
-            The data loader for the training data.
-        loss_function: torch.nn.Module
-            The loss function to use for training.
-        optimizer: torch.optim.Optimizer
-            The optimizer to use for training.
+        Args:
+            train_loader (DataLoader): DataLoader for the training data.
+            loss_function (torch.nn.Module): Loss function to use for training.
+            optimizer (torch.optim.Optimizer): Optimizer for training.
 
-        Returns
-        -------
-        list
-            A list of losses for each batch in the epoch.
+        Returns:
+            list: A list of batch losses for the epoch.
         """
         losses = []
         device = next(self.model.parameters()).device
@@ -230,19 +213,14 @@ class Trainer:
 
     def _forward(self, batch, device="cuda"):
         """
-        Performs a forward pass of the model using the input batch.
+        Perform a forward pass on the given batch.
 
-        Parameters
-        ----------
-        batch : tuple
-            A tuple containing input_ids and attention_mask tensors.
-        device : str, optional
-            The device to run the forward pass on, defaults to "cuda".
+        Args:
+            batch (tuple): Input batch containing input data and labels.
+            device (str, optional): Device for computation. Defaults to "cuda".
 
-        Returns
-        -------
-        torch.Tensor
-            The model predictions for the given inputs.
+        Returns:
+            torch.Tensor: Model predictions.
         """
         input_ids, attention_mask = batch[0].to(device), batch[1].to(device)
         preds = self.model(input_ids, attention_mask)
@@ -251,21 +229,15 @@ class Trainer:
     
     def _calulate_metrics(self, output, batch, device="cuda"):
         """
-        Calculates the given metrics for the given output and batch.
+        Calculate metrics for a batch.
 
-        Parameters
-        ----------
-        output : torch.Tensor
-            The model predictions for the given inputs.
-        batch : tuple
-            A tuple containing input_ids, attention_mask and labels tensors.
-        device : str, optional
-            The device to run the forward pass on, defaults to "cuda".
+        Args:
+            output (torch.Tensor): Model predictions.
+            batch (tuple): Input batch with labels.
+            device (str, optional): Device for computation. Defaults to "cuda".
 
-        Returns
-        -------
-        dict
-            A dictionary containing the calculated metrics.
+        Returns:
+            dict: Calculated metrics.
         """
         metrics_to_calulate = self.train_config.get("eval_metrics", [])
         metrics = {}
@@ -288,24 +260,14 @@ class Trainer:
         loss_function=None,
     ):  
         """
-        Evaluates the model on the given validation data.
+        Evaluate the model on the validation dataset.
 
-        Parameters
-        ----------
-        val_loader : torch.utils.data.DataLoader, optional
-            The validation data loader. If not provided, evaluation is skipped and empty validation metrics are returned.
-        loss_function : callable or str, optional
-            The loss function to use for evaluation. If not provided, the loss function specified in the training configuration is used.
+        Args:
+            val_loader (DataLoader, optional): Validation DataLoader. Defaults to None.
+            loss_function (callable or str, optional): Loss function for evaluation. Defaults to None.
 
-        Returns
-        -------
-        dict
-            A dictionary containing the mean validation metrics.
-        
-        Warnings
-        --------
-        UserWarning
-            If no validation data loader is provided and an empty dictionary is returned.
+        Returns:
+            dict: Average metrics over the validation dataset.
         """
         if val_loader is not None:
             with torch.no_grad():

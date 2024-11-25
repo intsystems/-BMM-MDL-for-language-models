@@ -2,10 +2,14 @@
 # -*- coding: utf-8 -*-
 
 """
-Variational Dropout version of linear and convolutional layers
+Variational Dropout implementation for linear layers and Bayesian neural networks.
 
+This module provides a `LinearGroupNJ` layer that implements Group Variational Dropout, as well as utilities for working with Bayesian layers.
 
-Karen Ullrich, Christos Louizos, Oct 2017
+References:
+    [1] Kingma, Diederik P., Tim Salimans, and Max Welling. "Variational dropout and the local reparameterization trick." NIPS (2015).
+    [2] Molchanov, Dmitry, Arsenii Ashukha, and Dmitry Vetrov. "Variational Dropout Sparsifies Deep Neural Networks." ICML (2017).
+    [3] Louizos, Christos, Karen Ullrich, and Max Welling. "Bayesian Compression for Deep Learning." NIPS (2017).
 """
 
 import math
@@ -21,21 +25,15 @@ from torch.nn.modules import utils
 
 def reparametrize(mu, logvar, sampling=True):
     """
-    Reparametrize trick for a Gaussian distribution with a diagonal covariance matrix.
+    Apply the reparametrization trick for sampling from a Gaussian distribution.
 
-    Parameters
-    ----------
-    mu : torch.autograd.Variable
-        Mean of the Gaussian distribution.
-    logvar : torch.autograd.Variable
-        Logarithm of the variance of the Gaussian distribution.
-    sampling : bool, optional
-        Whether to use the reparametrization trick or not. Defaults to True.
+    Args:
+        mu (torch.Tensor): Mean of the Gaussian distribution.
+        logvar (torch.Tensor): Log variance of the Gaussian distribution.
+        sampling (bool, optional): If True, samples using reparametrization. If False, returns the mean. Defaults to True.
 
-    Returns
-    -------
-    torch.autograd.Variable
-        Sampled or mean of the Gaussian distribution.
+    Returns:
+        torch.Tensor: Sampled tensor or the mean if sampling is False.
     """
     if sampling:
         std = logvar.mul(0.5).exp_()
@@ -51,12 +49,26 @@ def reparametrize(mu, logvar, sampling=True):
 
 
 class LinearGroupNJ(Module):
-    """Fully Connected Group Normal-Jeffrey's layer (aka Group Variational Dropout).
+    """
+    Fully Connected Group Normal-Jeffrey's (Group Variational Dropout) layer.
 
-    References:
-    [1] Kingma, Diederik P., Tim Salimans, and Max Welling. "Variational dropout and the local reparameterization trick." NIPS (2015).
-    [2] Molchanov, Dmitry, Arsenii Ashukha, and Dmitry Vetrov. "Variational Dropout Sparsifies Deep Neural Networks." ICML (2017).
-    [3] Louizos, Christos, Karen Ullrich, and Max Welling. "Bayesian Compression for Deep Learning." NIPS (2017).
+    Implements variational dropout for sparsifying neural networks.
+
+    Args:
+        in_features (int): Number of input features.
+        out_features (int): Number of output features.
+        cuda (bool, optional): Whether to use CUDA. Defaults to False.
+        init_weight (torch.Tensor, optional): Initial weight tensor. Defaults to None.
+        init_bias (torch.Tensor, optional): Initial bias tensor. Defaults to None.
+        clip_var (float, optional): Maximum variance for clipping. Defaults to None.
+
+    Attributes:
+        z_mu (torch.nn.Parameter): Mean for the variational dropout rates.
+        z_logvar (torch.nn.Parameter): Log variance for the variational dropout rates.
+        weight_mu (torch.nn.Parameter): Mean for the weight distribution.
+        weight_logvar (torch.nn.Parameter): Log variance for the weight distribution.
+        bias_mu (torch.nn.Parameter): Mean for the bias distribution.
+        bias_logvar (torch.nn.Parameter): Log variance for the bias distribution.
     """
 
     def __init__(
@@ -97,6 +109,13 @@ class LinearGroupNJ(Module):
         self.epsilon = 1e-8
 
     def reset_parameters(self, init_weight, init_bias):
+        """
+        Initialize the layer parameters.
+
+        Args:
+            init_weight (torch.Tensor, optional): Initial weight tensor. Defaults to None.
+            init_bias (torch.Tensor, optional): Initial bias tensor. Defaults to None.
+        """
         # init means
         stdv = 1.0 / math.sqrt(self.weight_mu.size(1))
 
@@ -137,6 +156,15 @@ class LinearGroupNJ(Module):
         return self.post_weight_mu, self.post_weight_var
 
     def forward(self, x):
+        """
+        Forward pass through the layer.
+
+        Args:
+            x (torch.Tensor): Input tensor.
+
+        Returns:
+            torch.Tensor: Output tensor after applying variational dropout and the linear transformation.
+        """
         if self.deterministic:
             assert (
                 self.training == False
@@ -169,6 +197,12 @@ class LinearGroupNJ(Module):
         )
 
     def kl_divergence(self):
+        """
+        Compute the KL divergence for the layer.
+
+        Returns:
+            torch.Tensor: KL divergence value.
+        """
         # KL(q(z)||p(z))
         # we use the kl divergence approximation given by [2] Eq.(14)
         k1, k2, k3 = 0.63576, 1.87320, 1.48695
@@ -213,13 +247,13 @@ BAYESIAN_LAYERS = (LinearGroupNJ)
 
 def get_kl_modules(model: nn.Module):
     """
-    Generator for all the Bayesian layers in a model.
+    Generator for iterating over Bayesian layers in a model.
 
     Args:
-        model: the model containing the Bayesian layers
+        model (nn.Module): The model containing Bayesian layers.
 
     Yields:
-        module: a Bayesian layer in the model
+        nn.Module: A Bayesian layer in the model.
     """
     for module in model.modules():
         if isinstance(module, BAYESIAN_LAYERS):

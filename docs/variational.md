@@ -10,6 +10,68 @@ That is theoretically equivalent to learning parameters of the model, minimizing
 
 See 2.2.1 Variatonal Code in original [paper](https://arxiv.org/pdf/2003.12298).
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.worker.min.js"></script>
+
+<div id="pdf-container" style="height: 600px; overflow: auto;"></div>
+<script>
+  const url = 'https://arxiv.org/pdf/2003.12298';
+
+  const pdfjsLib = window['pdfjs-dist/build/pdf'];
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.worker.min.js';
+
+  const container = document.getElementById('pdf-container');
+
+  pdfjsLib.getDocument(url).promise.then((pdf) => {
+    console.log(`Total pages: ${pdf.numPages}`);
+    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+      pdf.getPage(pageNum).then((page) => {
+        const viewport = page.getViewport({ scale: 1.5 }); // Adjust scale for better quality
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        container.appendChild(canvas);
+
+        const renderContext = { canvasContext: context, viewport: viewport };
+        page.render(renderContext);
+      });
+    }
+  });
+</script>
+
+
+---
+
+## 📚 Documentation
+
+Explore the components of the model used in this approach, organized into sections for clarity.
+
+### 🧠 Model Architecture
+Detailed documentation of the MLP (Multi-Layer Perceptron) model used for variational modeling.
+
+::: problib.mdl.variational_probing
+    handler: python
+
+---
+
+### 🎯 Training and Probing
+Comprehensive guide on the trainer used to probe and train the variational model.
+
+::: problib.mdl.Trainer
+    handler: python
+
+::: problib.mdl.BayesianLayers
+    handler: python
+
+---
+
+### 🛠️ Utils
+
+::: problib.mdl.utils
+    handler: python
+
 ---
 
 ## 🚀 Usage Guide

@@ -10,6 +10,22 @@ Bayesian approach similar to other approaches applies information-theoretic conc
 
 You can dive into theoretical underpinnings in our [blogpost](https://www.overleaf.com/project/6728a4c896d75ac1f40faf4d), or dive into original [paper](https://aclanthology.org/2021.emnlp-main.229).
 
+
+---
+
+## 📚 Documentation
+
+Explore the components of the model used in this approach, organized into sections for clarity.
+
+### 🧠 Model Architecture
+The Bayesian Probing Model integrates an MLP classifier with a sampling mechanism.
+
+::: problib.bayesian.probing
+    handler: python
+
+::: problib.bayesian.bayesian_model
+    handler: python
+
 ---
 
 ## 🚀 Usage Guide
