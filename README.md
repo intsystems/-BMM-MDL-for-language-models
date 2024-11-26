@@ -1,7 +1,13 @@
 # MDL for language model evaluation
 
-[<img src="coverage-badge.svg">](https://github.com/intsystems/SoftwareTemplate-simplified/tree/master)
-[<img src="https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white">](https://intsystems.github.io/SoftwareTemplate-simplified)
+[![License](https://img.shields.io/badge/License-MIT-blue)](#license)
+<div align="center">
+
+
+
+[![View site - GH Pages](https://img.shields.io/badge/View_site-GH_Pages-2ea44f?style=for-the-badge)](https://intsystems.github.io/MDL_for_Language_Models/) [![view - Documentation](https://img.shields.io/badge/view-Documentation-blue?style=for-the-badge)](/docs/ "Go to project documentation")
+
+</div>
 
 ## Motivation
 One of the method of language model analysis (and usage) is probing: we train a classifier for some specific layer of language model to extract some information about the analyzed words. For example, for PoS or syntactic properties of the words. The question we want to analyze is that which layer should we use, how should we choose this layer, and, generally, how much information about the downstream task can we capture from this layer/model. For this task multiple researchers proposed different theoretical frameworks. We propose to implement and compare different approaches used for this task.
