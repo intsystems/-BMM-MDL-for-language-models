@@ -1,9 +1,7 @@
-
-
 class TrainInfo:
     batch_id = 0
     running_loss = []
-    best_loss = float('inf')
+    best_loss = float("inf")
     best_batch = 0
     eps = 0.02
 
@@ -34,7 +32,7 @@ class TrainInfo:
         self.running_loss += [loss]
 
     def is_best(self, dev_results):
-        dev_loss = dev_results['loss']
+        dev_loss = dev_results["loss"]
         if dev_loss < self.best_loss - self.eps:
             self.best_loss = dev_loss
             self.best_batch = self.batch_id
@@ -47,9 +45,10 @@ class TrainInfo:
         self.running_loss = []
 
     def print_progress(self, dev_results):
-        dev_loss = dev_results['loss']
-        dev_acc = dev_results['acc']
+        dev_loss = dev_results["loss"]
+        dev_acc = dev_results["acc"]
         self.pbar.set_description(
-            'Training loss: %.4f Dev loss: %.4f acc: %.4f' %
-            (self.avg_loss, dev_loss, dev_acc))
+            "Training loss: %.4f Dev loss: %.4f acc: %.4f"
+            % (self.avg_loss, dev_loss, dev_acc)
+        )
         self.reset_loss()

@@ -18,12 +18,15 @@ class VariationalProbingModel(nn.Module):
         model (transformers.AutoModel): The pre-trained transformer model as the backbone.
         probing_layer (LinearGroupNJ): The Bayesian probing layer.
     """
+
     def __init__(self, pretrained_path="D:/models/roberta-base", out_features=None):
         super().__init__()
         self.model = AutoModel.from_pretrained(pretrained_path)
         if out_features is None:
             out_features = self.model.pooler.dense.out_features
-        self.probing_layer = LinearGroupNJ(self.model.pooler.dense.in_features, out_features)
+        self.probing_layer = LinearGroupNJ(
+            self.model.pooler.dense.in_features, out_features
+        )
 
     def forward(self, input_ids, attention_mask=None):
         """
@@ -37,9 +40,11 @@ class VariationalProbingModel(nn.Module):
             torch.Tensor: Output of the probing layer applied to the transformer's last hidden state.
         """
         with torch.no_grad():
-            backbone_outputs = self.model(input_ids=input_ids, attention_mask=attention_mask)
+            backbone_outputs = self.model(
+                input_ids=input_ids, attention_mask=attention_mask
+            )
         return self.probing_layer(backbone_outputs.last_hidden_state)
-    
+
     def kl_divergence(self):
         """
         Computes the KL divergence for the probing layer.
@@ -65,7 +70,7 @@ class VariationalProbingModel(nn.Module):
         """
         self.probing_layer.deterministic = False
         return super().train(*args, **kwargs)
-    
+
     def eval(self, *args, **kwargs):
         """
         Puts the model into evaluation mode.

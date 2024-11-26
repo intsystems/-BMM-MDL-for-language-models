@@ -1,7 +1,7 @@
 from torch.nn import functional as F
 from torch.utils.data import Dataset
 import torch
-import nltk 
+import nltk
 from nltk.corpus import conll2000
 
 
@@ -10,11 +10,12 @@ from nltk.corpus import conll2000
 # TODO: implement MDL calculation
 # TODO: implement metrics
 
+
 class POSTaggingTokenizer:
     """
     Tokenizer for part-of-speech tagging.
 
-    This tokenizer converts words and their part-of-speech tags into IDs and 
+    This tokenizer converts words and their part-of-speech tags into IDs and
     provides functionality for encoding and decoding tags.
 
     Attributes:
@@ -25,26 +26,28 @@ class POSTaggingTokenizer:
         eos_token_id (int): ID for the end-of-sequence token.
         unk_token_id (int): ID for the unknown token.
     """
+
     def __init__(self):
         """
-        Initializes the POSTaggingTokenizer with special tokens for padding, 
+        Initializes the POSTaggingTokenizer with special tokens for padding,
         beginning-of-sequence, end-of-sequence, and unknown tokens.
         """
-        self.idx2tag = {0: '<PAD>', 1: '<BOS>', 2: '<EOS>', 3: '<UNK>'}
+        self.idx2tag = {0: "<PAD>", 1: "<BOS>", 2: "<EOS>", 3: "<UNK>"}
         self.pad_token_id = 0
         self.bos_token_id = 1
         self.eos_token_id = 2
         self.unk_token_id = 3
-        self.tag2idx = {'<PAD>': 0, '<BOS>': 1, '<EOS>': 2, '<UNK>': 3}
+        self.tag2idx = {"<PAD>": 0, "<BOS>": 1, "<EOS>": 2, "<UNK>": 3}
+
     def __len__(self):
         return len(self.idx2tag)
-    
+
     def fit(self, sentences_conll):
         """
         Builds the tag vocabulary from a list of sentences in the CoNLL format.
 
         Args:
-            sentences_conll (List[List[tuple]]): List of sentences, where each 
+            sentences_conll (List[List[tuple]]): List of sentences, where each
                 sentence is a list of (word, tag) tuples.
 
         Returns:
@@ -69,11 +72,11 @@ class POSTaggingTokenizer:
                 of (word, tag) tuples.
 
         Returns:
-            List[List[tuple]] or List[tuple]: Encoded sentences or a single sentence 
+            List[List[tuple]] or List[tuple]: Encoded sentences or a single sentence
             with tags replaced by their IDs.
         """
         if isinstance(sent_words_with_tags[0], tuple):
-            sent_words_with_tags = [sent_words_with_tags]        
+            sent_words_with_tags = [sent_words_with_tags]
         sents_w_with_ids = []
         for s in sent_words_with_tags:
             w_with_ids = []
@@ -91,7 +94,7 @@ class POSTaggingTokenizer:
 
     def __call__(self, NERs):
         """
-            see .encode(...)
+        see .encode(...)
         """
         return self.encode(NERs)
 
@@ -127,11 +130,8 @@ class MDLDataset_POSTagging(Dataset):
         tagging_tokenizer (POSTaggingTokenizer): Tokenizer for encoding tags.
         data (list): List of encoded sentences with words and tag IDs.
     """
-    def __init__(
-        self,
-        data_path,
-        tagging_tokenizer=None
-    ):
+
+    def __init__(self, data_path, tagging_tokenizer=None):
         """
         Initializes the MDLDataset_POSTagging class.
         """
@@ -140,7 +140,6 @@ class MDLDataset_POSTagging(Dataset):
         self.data = self._read_data(data_path)
 
     def _read_data(self, data_path):
-                
         """
         Reads and processes data from the specified path.
 
@@ -162,7 +161,9 @@ class MDLDataset_POSTagging(Dataset):
             words_with_tag_ids = self.tagging_tokenizer(data)
             return words_with_tag_ids
         else:
-            raise NotImplementedError("Dataset not implemented for anything other than conll2000")
+            raise NotImplementedError(
+                "Dataset not implemented for anything other than conll2000"
+            )
 
     def __len__(self):
         """
@@ -183,7 +184,9 @@ class MDLDataset_POSTagging(Dataset):
         Returns:
             tuple: Words and corresponding tag IDs.
         """
-        return [elem[0] for elem in self.data[idx]], [elem[1] for elem in self.data[idx]]
+        return [elem[0] for elem in self.data[idx]], [
+            elem[1] for elem in self.data[idx]
+        ]
 
 
 class Collator:
@@ -204,6 +207,7 @@ class Collator:
         post_tagging_tokenizer (POSTaggingTokenizer): Tokenizer for encoding POS tags.
         tokenizer_kwargs (dict): Arguments for the tokenizer.
     """
+
     def __init__(
         self,
         tokenizer,
@@ -231,7 +235,7 @@ class Collator:
         Prepares and tokenizes a batch of data.
 
         Args:
-            batch (list): List of samples, where each sample is a tuple of words 
+            batch (list): List of samples, where each sample is a tuple of words
                 and their corresponding POS tags.
 
         Returns:
@@ -242,7 +246,9 @@ class Collator:
 
         sentences = [" ".join(word_list) for word_list in word_lists]
 
-        tokenized_sentences = self.tokenizer(sentences, return_tensors="pt", **self.tokenizer_kwargs)
+        tokenized_sentences = self.tokenizer(
+            sentences, return_tensors="pt", **self.tokenizer_kwargs
+        )
         input_ids = tokenized_sentences["input_ids"]
         attention_mask = tokenized_sentences["attention_mask"]
 
@@ -251,15 +257,19 @@ class Collator:
         for i in range(len(word_lists)):
             cur_sentence_tags_per_token = []
             cur_word_idx = 0
-            tokens = [elem.strip() for elem in self.tokenizer.batch_decode(input_ids[i])]
+            tokens = [
+                elem.strip() for elem in self.tokenizer.batch_decode(input_ids[i])
+            ]
             for token in tokens:
                 if token not in sentences[i]:
-                    cur_sentence_tags_per_token.append(self.post_tagging_tokenizer.pad_token_id)
+                    cur_sentence_tags_per_token.append(
+                        self.post_tagging_tokenizer.pad_token_id
+                    )
                 else:
                     while not token in word_lists[i][cur_word_idx]:
                         cur_word_idx += 1
                     cur_sentence_tags_per_token.append(tags_per_word[i][cur_word_idx])
-            
+
             tags_per_token.append(cur_sentence_tags_per_token)
 
         if self.tokenizer_kwargs["padding"]:

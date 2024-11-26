@@ -3,6 +3,7 @@ from transformers import Trainer
 from torch import nn
 import torch
 
+
 class MLPTrainer(Trainer):
     """
     Custom Trainer class for training MLP models with additional loss computations.
@@ -73,7 +74,7 @@ class MLPTrainer(Trainer):
             and "log_cache" in self.sampler.logZ.__code__.co_varnames
             else None
         )
-        
+
         logZ = (
             self.sampler.logZ(cache=log_cache)
             if log_cache is not None

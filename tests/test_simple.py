@@ -16,16 +16,17 @@ def test_trainer():
     dataset = SyntheticBernuliDataset(n=10, m=100, seed=42)
 
     trainer = Trainer(
-        LogisticRegression(penalty='l1', solver='saga', C=1.0),
+        LogisticRegression(penalty="l1", solver="saga", C=1.0),
         dataset.X,
         dataset.y,
     )
     trainer.train()
 
-    assert trainer.eval(output_dict=True)['accuracy'] == 0.96
+    assert trainer.eval(output_dict=True)["accuracy"] == 0.96
 
-    assert trainer.test(trainer.X_val, trainer.Y_val,
-                        output_dict=True)['accuracy'] == 0.96
+    assert (
+        trainer.test(trainer.X_val, trainer.Y_val, output_dict=True)["accuracy"] == 0.96
+    )
 
 
 def test_cv():

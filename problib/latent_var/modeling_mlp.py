@@ -4,6 +4,7 @@ from transformers import PretrainedConfig
 from .samplers import get_sampler
 from .base import BaseModel
 
+
 class MLPConfig(PretrainedConfig):
     """Configuration class for the MLPClassifier model.
 
@@ -17,6 +18,7 @@ class MLPConfig(PretrainedConfig):
         D (int): Dimensionality of the input features (alias for input_dim).
         K (int): Number of samples or features to consider.
     """
+
     model_type = "mlp_classifier"
 
     def __init__(
@@ -41,7 +43,7 @@ class MLPConfig(PretrainedConfig):
             **kwargs: Additional keyword arguments for PretrainedConfig initialization.
         """
         super().__init__(**kwargs)  # Initialize base configuration
-        
+
         # Set configuration parameters as attributes
         self.input_dim = input_dim
         self.hidden_dim = hidden_dim
@@ -49,7 +51,8 @@ class MLPConfig(PretrainedConfig):
         self.num_layers = num_layers
         self.sampler_type = sampler_type
         self.D = input_dim  # Dimensionality of input features
-        self.K = K          # Number of samples or features to consider
+        self.K = K  # Number of samples or features to consider
+
 
 class MLPClassifier(nn.Module):
     """Multi-Layer Perceptron Classifier model.
@@ -62,7 +65,7 @@ class MLPClassifier(nn.Module):
     Attributes:
         layers (nn.Sequential): Sequential container for the MLP layers.
     """
-    
+
     def __init__(self, config: MLPConfig):
         """Initialize the MLPClassifier model.
 
@@ -70,18 +73,18 @@ class MLPClassifier(nn.Module):
             config (MLPConfig): Configuration object containing model parameters.
         """
         super().__init__()
-        
+
         layers = []
         input_dim = config.input_dim
-        
+
         # Create layers based on the configuration
         for _ in range(config.num_layers):
             layers.append(nn.Linear(input_dim, config.hidden_dim))  # Add linear layer
-            layers.append(nn.ReLU())                                 # Add ReLU activation
-            input_dim = config.hidden_dim                           # Update input dimension for next layer
-        
+            layers.append(nn.ReLU())  # Add ReLU activation
+            input_dim = config.hidden_dim  # Update input dimension for next layer
+
         layers.append(nn.Linear(config.hidden_dim, config.output_dim))  # Output layer
-        
+
         # Store constructed layers in a sequential container as an attribute
         self.layers = nn.Sequential(*layers)
 
@@ -95,6 +98,7 @@ class MLPClassifier(nn.Module):
             torch.Tensor: Output logits with shape (batch_size, output_dim).
         """
         return self.layers(x)
+
 
 class ProbingModel(BaseModel):
     """Probing Model for analysis.
@@ -110,7 +114,7 @@ class ProbingModel(BaseModel):
         sampler: Sampler instance used for generating masks.
         classifier (MLPClassifier): Instance of the MLPClassifier used for predictions.
     """
-    
+
     name = "probing_model"
 
     def __init__(self, config: MLPConfig):
@@ -120,13 +124,13 @@ class ProbingModel(BaseModel):
             config (MLPConfig): Configuration object containing model parameters.
         """
         super().__init__()
-        
+
         # Store configuration as an attribute
         self.config = config
-        
+
         # Initialize sampler based on configuration as an attribute
         self.sampler = get_sampler(config.sampler_type, config.D, config.K)
-        
+
         # Initialize classifier using provided configuration as an attribute
         self.classifier = MLPClassifier(config)
 
@@ -138,18 +142,18 @@ class ProbingModel(BaseModel):
 
         Returns:
              torch.Tensor: Output logits after applying sampling and classification.
-        
-        The method samples a mask from the sampler and applies it to the input tensor before passing it through 
+
+        The method samples a mask from the sampler and applies it to the input tensor before passing it through
         the classifier. The resulting logits are returned as output.
         """
-        
+
         # Sample a mask based on batch size from sampler
         mask = self.sampler.sample(x.size(0))
-         
+
         # Apply mask to input tensor
         masked_x = x * mask
-         
+
         # Get logits from classifier based on masked inputs
         logits = self.classifier(masked_x)
-         
+
         return logits

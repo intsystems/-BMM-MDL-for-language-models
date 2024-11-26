@@ -3,6 +3,7 @@ import warnings
 from BayesianLayers import *
 import numpy as np
 
+
 class Trainer:
     """
     Trainer class for training models with various configurations and handling evaluation.
@@ -10,16 +11,13 @@ class Trainer:
     Args:
         model (nn.Module, optional): The model to be trained. Defaults to None.
         train_config (dict, optional): Configuration dictionary for training. Defaults to None.
-    
+
     Attributes:
         model (nn.Module): The model being trained.
         train_config (dict): Configuration settings for the training process.
     """
-    def __init__(
-        self, 
-        model=None,
-        train_config=None
-    ):
+
+    def __init__(self, model=None, train_config=None):
         """
         Initialize the Trainer object.
 
@@ -42,7 +40,6 @@ class Trainer:
         lr=None,
         evaluate_every=-1,  # -1 for no evaluation
     ):
-
         """
         Train the model using the provided configuration and data loaders.
 
@@ -68,7 +65,7 @@ class Trainer:
             self.model = model
         if self.model is None:
             raise ValueError("No model provided")
-        
+
         if lr is not None:
             self.train_config["lr"] = lr
         elif "lr" in self.train_config:
@@ -103,7 +100,6 @@ class Trainer:
             n_epochs = 1
             self.train_config["n_epochs"] = n_epochs
             warnings.warn("No n_epochs provided. Defaulting to 1", UserWarning)
-            
 
         if loss_function is not None:
             if not isinstance(loss_function, str):
@@ -113,7 +109,10 @@ class Trainer:
         elif "loss_function" in self.train_config:
             loss_function = self.train_config["loss_function"]
         else:
-            warnings.warn("No loss function provided. Defaulting to crossentropy", UserWarning,)
+            warnings.warn(
+                "No loss function provided. Defaulting to crossentropy",
+                UserWarning,
+            )
             loss_function = "crossentropy"
             self.train_config["loss_function"] = loss_function
 
@@ -128,7 +127,7 @@ class Trainer:
             train_loader = self.train_config.get("train_loader", None)
             if train_loader is None:
                 raise ValueError("No train_loader provided")
-            
+
         if val_loader is None:
             val_loader = self.train_config.get("val_loader", None)
             if val_loader is None:
@@ -144,7 +143,10 @@ class Trainer:
         elif "evaluate_every" in self.train_config:
             evaluate_every = self.train_config["evaluate_every"]
         else:
-            warnings.warn("No evaluate_every provided. Defaulting to -1 (no evaluation)", UserWarning)
+            warnings.warn(
+                "No evaluate_every provided. Defaulting to -1 (no evaluation)",
+                UserWarning,
+            )
             evaluate_every = -1
 
         losses = []
@@ -167,12 +169,7 @@ class Trainer:
 
         return self.model
 
-    def _train_epoch(
-        self, 
-        train_loader, 
-        loss_function, 
-        optimizer
-    ):
+    def _train_epoch(self, train_loader, loss_function, optimizer):
         """
         Perform one epoch of training.
 
@@ -197,8 +194,10 @@ class Trainer:
             self.model.train()
 
             output = self._forward(batch, device=device)
-            
-            loss = loss_function(output.view(-1, output.shape[-1]), batch[-1].to(device).view(-1))
+
+            loss = loss_function(
+                output.view(-1, output.shape[-1]), batch[-1].to(device).view(-1)
+            )
 
             if variational:
                 kl_loss = sum([m.kl_divergence() for m in bayes_modules])
@@ -226,7 +225,7 @@ class Trainer:
         preds = self.model(input_ids, attention_mask)
 
         return preds
-    
+
     def _calulate_metrics(self, output, batch, device="cuda"):
         """
         Calculate metrics for a batch.
@@ -244,21 +243,35 @@ class Trainer:
 
         for m in metrics_to_calulate:
             if m == "description_length":
-                ce_part = nn.CrossEntropyLoss()(output.view(-1, output.shape[-1]), batch[-1].to(device).view(-1)).detach().cpu().numpy()
+                ce_part = (
+                    nn.CrossEntropyLoss()(
+                        output.view(-1, output.shape[-1]), batch[-1].to(device).view(-1)
+                    )
+                    .detach()
+                    .cpu()
+                    .numpy()
+                )
                 kl_part = self.model.kl_divergence().detach().cpu().numpy()
                 metrics[m] = ce_part + kl_part
             elif m == "accuracy":
-                metrics[m] = (output.argmax(dim=-1) == batch[-1].to(device)).float().mean().detach().cpu().numpy()
+                metrics[m] = (
+                    (output.argmax(dim=-1) == batch[-1].to(device))
+                    .float()
+                    .mean()
+                    .detach()
+                    .cpu()
+                    .numpy()
+                )
             else:
                 warnings.warn(f"Unknown metric: {m}", UserWarning)
-        
+
         return metrics
 
     def evaluate(
         self,
         val_loader=None,
         loss_function=None,
-    ):  
+    ):
         """
         Evaluate the model on the validation dataset.
 
@@ -279,20 +292,28 @@ class Trainer:
                     self.model.train()
 
                     output = self._forward(batch, device=device)
-                    
+
                     batch_metrics = self._calulate_metrics(output, batch, device)
 
                     if loss_function is None:
                         loss_function = self.train_config.get("loss_function", None)
-                    if not self.train_config.get("variational", False) and loss_function is not None:
+                    if (
+                        not self.train_config.get("variational", False)
+                        and loss_function is not None
+                    ):
                         if isinstance(loss_function, str):
                             if loss_function == "crossentropy":
                                 loss_function = nn.CrossEntropyLoss()
                             elif loss_function == "mse":
                                 loss_function = nn.MSELoss()
                             else:
-                                raise ValueError(f"Unknown loss function: {loss_function}")
-                        loss = loss_function(output.view(-1, output.shape[-1]), batch[-1].to(device).view(-1))
+                                raise ValueError(
+                                    f"Unknown loss function: {loss_function}"
+                                )
+                        loss = loss_function(
+                            output.view(-1, output.shape[-1]),
+                            batch[-1].to(device).view(-1),
+                        )
                         batch_metrics["loss"] = loss
 
                     metrics.append(batch_metrics)
@@ -304,5 +325,7 @@ class Trainer:
                 return metrics_mean
 
         else:
-            warnings.warn("No validation data provided, return empty val metrics", UserWarning)
+            warnings.warn(
+                "No validation data provided, return empty val metrics", UserWarning
+            )
             return {}

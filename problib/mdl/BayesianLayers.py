@@ -242,7 +242,8 @@ class LinearGroupNJ(Module):
             + ")"
         )
 
-BAYESIAN_LAYERS = (LinearGroupNJ)
+
+BAYESIAN_LAYERS = LinearGroupNJ
 
 
 def get_kl_modules(model: nn.Module):
