@@ -5,7 +5,7 @@
 
 
 
-[![View site - GH Pages](https://img.shields.io/badge/View_site-GH_Pages-2ea44f?style=for-the-badge)](https://intsystems.github.io/MDL_for_Language_Models/) [![view - Documentation](https://img.shields.io/badge/view-Documentation-blue?style=for-the-badge)](/docs/ "Go to project documentation")
+[![Documentation](https://img.shields.io/badge/View_site-GH_Pages-2ea44f?style=for-the-badge)](https://intsystems.github.io/MDL_for_Language_Models/)
 
 </div>
 
