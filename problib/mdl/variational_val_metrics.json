@@ -1,0 +1,3002 @@
+[
+    {
+        "cross_entropy_loss": 92813.359375,
+        "KL_divergence": 151730.484375,
+        "description_length": 244543.84375,
+        "accuracy": 0.05307348817586899
+    },
+    {
+        "cross_entropy_loss": 78526.75,
+        "KL_divergence": 151831.828125,
+        "description_length": 230358.5625,
+        "accuracy": 0.1060049831867218
+    },
+    {
+        "cross_entropy_loss": 67699.328125,
+        "KL_divergence": 151909.71875,
+        "description_length": 219609.046875,
+        "accuracy": 0.15218104422092438
+    },
+    {
+        "cross_entropy_loss": 59229.9296875,
+        "KL_divergence": 151961.71875,
+        "description_length": 211191.65625,
+        "accuracy": 0.1900680810213089
+    },
+    {
+        "cross_entropy_loss": 52352.8359375,
+        "KL_divergence": 151992.359375,
+        "description_length": 204345.1875,
+        "accuracy": 0.21826153993606567
+    },
+    {
+        "cross_entropy_loss": 46659.015625,
+        "KL_divergence": 152011.765625,
+        "description_length": 198670.78125,
+        "accuracy": 0.2366889864206314
+    },
+    {
+        "cross_entropy_loss": 41899.390625,
+        "KL_divergence": 152020.625,
+        "description_length": 193920.015625,
+        "accuracy": 0.25103846192359924
+    },
+    {
+        "cross_entropy_loss": 37802.078125,
+        "KL_divergence": 152022.03125,
+        "description_length": 189824.109375,
+        "accuracy": 0.26016250252723694
+    },
+    {
+        "cross_entropy_loss": 34202.2109375,
+        "KL_divergence": 152017.328125,
+        "description_length": 186219.53125,
+        "accuracy": 0.2676847577095032
+    },
+    {
+        "cross_entropy_loss": 31280.35546875,
+        "KL_divergence": 152007.453125,
+        "description_length": 183287.8125,
+        "accuracy": 0.27345284819602966
+    },
+    {
+        "cross_entropy_loss": 28765.8046875,
+        "KL_divergence": 151992.34375,
+        "description_length": 180758.140625,
+        "accuracy": 0.2773294448852539
+    },
+    {
+        "cross_entropy_loss": 26660.9453125,
+        "KL_divergence": 151971.78125,
+        "description_length": 178632.71875,
+        "accuracy": 0.2809789776802063
+    },
+    {
+        "cross_entropy_loss": 24830.015625,
+        "KL_divergence": 151946.0,
+        "description_length": 176776.03125,
+        "accuracy": 0.2837371826171875
+    },
+    {
+        "cross_entropy_loss": 23256.5625,
+        "KL_divergence": 151915.5,
+        "description_length": 175172.0625,
+        "accuracy": 0.2863876223564148
+    },
+    {
+        "cross_entropy_loss": 21801.7265625,
+        "KL_divergence": 151880.390625,
+        "description_length": 173682.125,
+        "accuracy": 0.2883870601654053
+    },
+    {
+        "cross_entropy_loss": 20585.4609375,
+        "KL_divergence": 151842.03125,
+        "description_length": 172427.5,
+        "accuracy": 0.2898501455783844
+    },
+    {
+        "cross_entropy_loss": 19504.66015625,
+        "KL_divergence": 151799.109375,
+        "description_length": 171303.78125,
+        "accuracy": 0.29154345393180847
+    },
+    {
+        "cross_entropy_loss": 18587.7421875,
+        "KL_divergence": 151752.734375,
+        "description_length": 170340.46875,
+        "accuracy": 0.2927371859550476
+    },
+    {
+        "cross_entropy_loss": 17813.7421875,
+        "KL_divergence": 151700.921875,
+        "description_length": 169514.65625,
+        "accuracy": 0.29363322257995605
+    },
+    {
+        "cross_entropy_loss": 16988.306640625,
+        "KL_divergence": 151648.75,
+        "description_length": 168637.0625,
+        "accuracy": 0.2952778935432434
+    },
+    {
+        "cross_entropy_loss": 16362.87109375,
+        "KL_divergence": 151594.859375,
+        "description_length": 167957.71875,
+        "accuracy": 0.2956870198249817
+    },
+    {
+        "cross_entropy_loss": 15769.0517578125,
+        "KL_divergence": 151536.859375,
+        "description_length": 167305.90625,
+        "accuracy": 0.2965163588523865
+    },
+    {
+        "cross_entropy_loss": 15264.7822265625,
+        "KL_divergence": 151475.90625,
+        "description_length": 166740.6875,
+        "accuracy": 0.2972744107246399
+    },
+    {
+        "cross_entropy_loss": 14669.544921875,
+        "KL_divergence": 151411.765625,
+        "description_length": 166081.3125,
+        "accuracy": 0.2979812026023865
+    },
+    {
+        "cross_entropy_loss": 14362.8818359375,
+        "KL_divergence": 151345.375,
+        "description_length": 165708.25,
+        "accuracy": 0.29820990562438965
+    },
+    {
+        "cross_entropy_loss": 13899.5947265625,
+        "KL_divergence": 151274.671875,
+        "description_length": 165174.265625,
+        "accuracy": 0.2990069091320038
+    },
+    {
+        "cross_entropy_loss": 13522.373046875,
+        "KL_divergence": 151202.65625,
+        "description_length": 164725.03125,
+        "accuracy": 0.29919877648353577
+    },
+    {
+        "cross_entropy_loss": 13229.47265625,
+        "KL_divergence": 151132.265625,
+        "description_length": 164361.75,
+        "accuracy": 0.2996350824832916
+    },
+    {
+        "cross_entropy_loss": 12965.3271484375,
+        "KL_divergence": 151059.6875,
+        "description_length": 164025.015625,
+        "accuracy": 0.300224632024765
+    },
+    {
+        "cross_entropy_loss": 12603.90234375,
+        "KL_divergence": 150984.375,
+        "description_length": 163588.28125,
+        "accuracy": 0.30030542612075806
+    },
+    {
+        "cross_entropy_loss": 12340.9765625,
+        "KL_divergence": 150906.140625,
+        "description_length": 163247.125,
+        "accuracy": 0.3012004494667053
+    },
+    {
+        "cross_entropy_loss": 12065.9814453125,
+        "KL_divergence": 150827.5625,
+        "description_length": 162893.53125,
+        "accuracy": 0.3016369044780731
+    },
+    {
+        "cross_entropy_loss": 11803.23046875,
+        "KL_divergence": 150748.5625,
+        "description_length": 162551.796875,
+        "accuracy": 0.30185985565185547
+    },
+    {
+        "cross_entropy_loss": 11654.271484375,
+        "KL_divergence": 150668.390625,
+        "description_length": 162322.65625,
+        "accuracy": 0.3019711971282959
+    },
+    {
+        "cross_entropy_loss": 11390.0302734375,
+        "KL_divergence": 150587.4375,
+        "description_length": 161977.46875,
+        "accuracy": 0.3021587133407593
+    },
+    {
+        "cross_entropy_loss": 11216.41015625,
+        "KL_divergence": 150505.921875,
+        "description_length": 161722.34375,
+        "accuracy": 0.30265554785728455
+    },
+    {
+        "cross_entropy_loss": 11051.322265625,
+        "KL_divergence": 150422.109375,
+        "description_length": 161473.4375,
+        "accuracy": 0.30268341302871704
+    },
+    {
+        "cross_entropy_loss": 10918.1796875,
+        "KL_divergence": 150337.21875,
+        "description_length": 161255.40625,
+        "accuracy": 0.3029179573059082
+    },
+    {
+        "cross_entropy_loss": 10730.3603515625,
+        "KL_divergence": 150250.8125,
+        "description_length": 160981.171875,
+        "accuracy": 0.30332544445991516
+    },
+    {
+        "cross_entropy_loss": 10630.1025390625,
+        "KL_divergence": 150164.96875,
+        "description_length": 160795.0625,
+        "accuracy": 0.3034132719039917
+    },
+    {
+        "cross_entropy_loss": 10422.0185546875,
+        "KL_divergence": 150077.9375,
+        "description_length": 160499.953125,
+        "accuracy": 0.30371665954589844
+    },
+    {
+        "cross_entropy_loss": 10369.544921875,
+        "KL_divergence": 149989.875,
+        "description_length": 160359.40625,
+        "accuracy": 0.30350178480148315
+    },
+    {
+        "cross_entropy_loss": 10235.3671875,
+        "KL_divergence": 149900.859375,
+        "description_length": 160136.21875,
+        "accuracy": 0.3036278784275055
+    },
+    {
+        "cross_entropy_loss": 10090.3701171875,
+        "KL_divergence": 149811.859375,
+        "description_length": 159902.21875,
+        "accuracy": 0.30425477027893066
+    },
+    {
+        "cross_entropy_loss": 9972.341796875,
+        "KL_divergence": 149721.578125,
+        "description_length": 159693.921875,
+        "accuracy": 0.304619163274765
+    },
+    {
+        "cross_entropy_loss": 9917.779296875,
+        "KL_divergence": 149632.65625,
+        "description_length": 159550.4375,
+        "accuracy": 0.30420589447021484
+    },
+    {
+        "cross_entropy_loss": 9744.224609375,
+        "KL_divergence": 149543.53125,
+        "description_length": 159287.75,
+        "accuracy": 0.3046480715274811
+    },
+    {
+        "cross_entropy_loss": 9675.736328125,
+        "KL_divergence": 149453.421875,
+        "description_length": 159129.15625,
+        "accuracy": 0.305117130279541
+    },
+    {
+        "cross_entropy_loss": 9609.029296875,
+        "KL_divergence": 149361.046875,
+        "description_length": 158970.0625,
+        "accuracy": 0.3051176071166992
+    },
+    {
+        "cross_entropy_loss": 9569.9677734375,
+        "KL_divergence": 149267.921875,
+        "description_length": 158837.890625,
+        "accuracy": 0.30527615547180176
+    },
+    {
+        "cross_entropy_loss": 9434.3603515625,
+        "KL_divergence": 149175.5625,
+        "description_length": 158609.921875,
+        "accuracy": 0.30547744035720825
+    },
+    {
+        "cross_entropy_loss": 9372.185546875,
+        "KL_divergence": 149081.9375,
+        "description_length": 158454.125,
+        "accuracy": 0.30513039231300354
+    },
+    {
+        "cross_entropy_loss": 9227.294921875,
+        "KL_divergence": 148988.984375,
+        "description_length": 158216.28125,
+        "accuracy": 0.30582112073898315
+    },
+    {
+        "cross_entropy_loss": 9243.552734375,
+        "KL_divergence": 148896.234375,
+        "description_length": 158139.78125,
+        "accuracy": 0.3055410385131836
+    },
+    {
+        "cross_entropy_loss": 9128.6650390625,
+        "KL_divergence": 148801.90625,
+        "description_length": 157930.5625,
+        "accuracy": 0.30578404664993286
+    },
+    {
+        "cross_entropy_loss": 9098.0390625,
+        "KL_divergence": 148707.6875,
+        "description_length": 157805.71875,
+        "accuracy": 0.3061050772666931
+    },
+    {
+        "cross_entropy_loss": 9047.078125,
+        "KL_divergence": 148612.703125,
+        "description_length": 157659.78125,
+        "accuracy": 0.305995911359787
+    },
+    {
+        "cross_entropy_loss": 8970.8505859375,
+        "KL_divergence": 148516.984375,
+        "description_length": 157487.828125,
+        "accuracy": 0.3057915270328522
+    },
+    {
+        "cross_entropy_loss": 8898.638671875,
+        "KL_divergence": 148420.953125,
+        "description_length": 157319.59375,
+        "accuracy": 0.3062934875488281
+    },
+    {
+        "cross_entropy_loss": 8879.3759765625,
+        "KL_divergence": 148323.484375,
+        "description_length": 157202.859375,
+        "accuracy": 0.3061869740486145
+    },
+    {
+        "cross_entropy_loss": 8770.849609375,
+        "KL_divergence": 148227.1875,
+        "description_length": 156998.03125,
+        "accuracy": 0.30637213587760925
+    },
+    {
+        "cross_entropy_loss": 8732.3466796875,
+        "KL_divergence": 148130.75,
+        "description_length": 156863.09375,
+        "accuracy": 0.3062102794647217
+    },
+    {
+        "cross_entropy_loss": 8662.80078125,
+        "KL_divergence": 148034.90625,
+        "description_length": 156697.71875,
+        "accuracy": 0.30681464076042175
+    },
+    {
+        "cross_entropy_loss": 8617.79296875,
+        "KL_divergence": 147939.703125,
+        "description_length": 156557.5,
+        "accuracy": 0.30658596754074097
+    },
+    {
+        "cross_entropy_loss": 8636.919921875,
+        "KL_divergence": 147843.546875,
+        "description_length": 156480.46875,
+        "accuracy": 0.306564599275589
+    },
+    {
+        "cross_entropy_loss": 8636.1376953125,
+        "KL_divergence": 147746.59375,
+        "description_length": 156382.71875,
+        "accuracy": 0.3066588044166565
+    },
+    {
+        "cross_entropy_loss": 8475.865234375,
+        "KL_divergence": 147650.859375,
+        "description_length": 156126.71875,
+        "accuracy": 0.30708932876586914
+    },
+    {
+        "cross_entropy_loss": 8466.84765625,
+        "KL_divergence": 147554.625,
+        "description_length": 156021.46875,
+        "accuracy": 0.3068130612373352
+    },
+    {
+        "cross_entropy_loss": 8474.7744140625,
+        "KL_divergence": 147459.265625,
+        "description_length": 155934.03125,
+        "accuracy": 0.3073420524597168
+    },
+    {
+        "cross_entropy_loss": 8409.8671875,
+        "KL_divergence": 147363.78125,
+        "description_length": 155773.65625,
+        "accuracy": 0.3068268299102783
+    },
+    {
+        "cross_entropy_loss": 8430.388671875,
+        "KL_divergence": 147268.734375,
+        "description_length": 155699.125,
+        "accuracy": 0.3071611821651459
+    },
+    {
+        "cross_entropy_loss": 8358.203125,
+        "KL_divergence": 147172.53125,
+        "description_length": 155530.734375,
+        "accuracy": 0.30736127495765686
+    },
+    {
+        "cross_entropy_loss": 8315.203125,
+        "KL_divergence": 147077.546875,
+        "description_length": 155392.75,
+        "accuracy": 0.30713000893592834
+    },
+    {
+        "cross_entropy_loss": 8172.78955078125,
+        "KL_divergence": 146982.53125,
+        "description_length": 155155.3125,
+        "accuracy": 0.30771005153656006
+    },
+    {
+        "cross_entropy_loss": 8231.8828125,
+        "KL_divergence": 146886.078125,
+        "description_length": 155117.96875,
+        "accuracy": 0.30728262662887573
+    },
+    {
+        "cross_entropy_loss": 8248.384765625,
+        "KL_divergence": 146788.515625,
+        "description_length": 155036.90625,
+        "accuracy": 0.307150274515152
+    },
+    {
+        "cross_entropy_loss": 8203.5302734375,
+        "KL_divergence": 146690.703125,
+        "description_length": 154894.234375,
+        "accuracy": 0.3069777488708496
+    },
+    {
+        "cross_entropy_loss": 8175.2509765625,
+        "KL_divergence": 146593.421875,
+        "description_length": 154768.671875,
+        "accuracy": 0.3074361979961395
+    },
+    {
+        "cross_entropy_loss": 8125.8935546875,
+        "KL_divergence": 146496.859375,
+        "description_length": 154622.75,
+        "accuracy": 0.3074113130569458
+    },
+    {
+        "cross_entropy_loss": 7997.068359375,
+        "KL_divergence": 146399.578125,
+        "description_length": 154396.65625,
+        "accuracy": 0.3077567219734192
+    },
+    {
+        "cross_entropy_loss": 8009.7548828125,
+        "KL_divergence": 146301.71875,
+        "description_length": 154311.46875,
+        "accuracy": 0.3074440062046051
+    },
+    {
+        "cross_entropy_loss": 7982.0810546875,
+        "KL_divergence": 146203.734375,
+        "description_length": 154185.8125,
+        "accuracy": 0.307656466960907
+    },
+    {
+        "cross_entropy_loss": 8022.439453125,
+        "KL_divergence": 146105.25,
+        "description_length": 154127.6875,
+        "accuracy": 0.307596355676651
+    },
+    {
+        "cross_entropy_loss": 7872.533203125,
+        "KL_divergence": 146006.640625,
+        "description_length": 153879.1875,
+        "accuracy": 0.30787450075149536
+    },
+    {
+        "cross_entropy_loss": 7866.41015625,
+        "KL_divergence": 145907.390625,
+        "description_length": 153773.796875,
+        "accuracy": 0.3080228567123413
+    },
+    {
+        "cross_entropy_loss": 7974.3203125,
+        "KL_divergence": 145807.15625,
+        "description_length": 153781.46875,
+        "accuracy": 0.30747517943382263
+    },
+    {
+        "cross_entropy_loss": 7949.759765625,
+        "KL_divergence": 145708.296875,
+        "description_length": 153658.0625,
+        "accuracy": 0.307894229888916
+    },
+    {
+        "cross_entropy_loss": 7752.921875,
+        "KL_divergence": 145614.28125,
+        "description_length": 153367.203125,
+        "accuracy": 0.30803394317626953
+    },
+    {
+        "cross_entropy_loss": 7783.30224609375,
+        "KL_divergence": 145518.828125,
+        "description_length": 153302.125,
+        "accuracy": 0.3081258237361908
+    },
+    {
+        "cross_entropy_loss": 7787.11962890625,
+        "KL_divergence": 145420.359375,
+        "description_length": 153207.484375,
+        "accuracy": 0.30808740854263306
+    },
+    {
+        "cross_entropy_loss": 7746.9609375,
+        "KL_divergence": 145320.203125,
+        "description_length": 153067.15625,
+        "accuracy": 0.30819767713546753
+    },
+    {
+        "cross_entropy_loss": 7707.595703125,
+        "KL_divergence": 145221.796875,
+        "description_length": 152929.40625,
+        "accuracy": 0.3083615303039551
+    },
+    {
+        "cross_entropy_loss": 7800.3486328125,
+        "KL_divergence": 145123.390625,
+        "description_length": 152923.75,
+        "accuracy": 0.3080284595489502
+    },
+    {
+        "cross_entropy_loss": 7680.9443359375,
+        "KL_divergence": 145024.65625,
+        "description_length": 152705.59375,
+        "accuracy": 0.30811500549316406
+    },
+    {
+        "cross_entropy_loss": 7687.7578125,
+        "KL_divergence": 144927.921875,
+        "description_length": 152615.6875,
+        "accuracy": 0.30831655859947205
+    },
+    {
+        "cross_entropy_loss": 7668.021484375,
+        "KL_divergence": 144830.03125,
+        "description_length": 152498.0625,
+        "accuracy": 0.30853885412216187
+    },
+    {
+        "cross_entropy_loss": 7706.7822265625,
+        "KL_divergence": 144732.84375,
+        "description_length": 152439.625,
+        "accuracy": 0.30854111909866333
+    },
+    {
+        "cross_entropy_loss": 7657.16796875,
+        "KL_divergence": 144635.953125,
+        "description_length": 152293.125,
+        "accuracy": 0.30821895599365234
+    },
+    {
+        "cross_entropy_loss": 7617.5390625,
+        "KL_divergence": 144538.296875,
+        "description_length": 152155.84375,
+        "accuracy": 0.30819982290267944
+    },
+    {
+        "cross_entropy_loss": 7588.142578125,
+        "KL_divergence": 144440.203125,
+        "description_length": 152028.34375,
+        "accuracy": 0.3085482716560364
+    },
+    {
+        "cross_entropy_loss": 7559.41796875,
+        "KL_divergence": 144340.90625,
+        "description_length": 151900.328125,
+        "accuracy": 0.3086138367652893
+    },
+    {
+        "cross_entropy_loss": 7531.9990234375,
+        "KL_divergence": 144243.546875,
+        "description_length": 151775.546875,
+        "accuracy": 0.3087003827095032
+    },
+    {
+        "cross_entropy_loss": 7559.5947265625,
+        "KL_divergence": 144147.4375,
+        "description_length": 151707.03125,
+        "accuracy": 0.30837249755859375
+    },
+    {
+        "cross_entropy_loss": 7543.7412109375,
+        "KL_divergence": 144049.859375,
+        "description_length": 151593.59375,
+        "accuracy": 0.3088025748729706
+    },
+    {
+        "cross_entropy_loss": 7506.5966796875,
+        "KL_divergence": 143952.671875,
+        "description_length": 151459.265625,
+        "accuracy": 0.308366596698761
+    },
+    {
+        "cross_entropy_loss": 7525.294921875,
+        "KL_divergence": 143854.96875,
+        "description_length": 151380.25,
+        "accuracy": 0.3084542751312256
+    },
+    {
+        "cross_entropy_loss": 7385.5244140625,
+        "KL_divergence": 143756.46875,
+        "description_length": 151142.0,
+        "accuracy": 0.308931827545166
+    },
+    {
+        "cross_entropy_loss": 7499.1572265625,
+        "KL_divergence": 143658.921875,
+        "description_length": 151158.09375,
+        "accuracy": 0.30856311321258545
+    },
+    {
+        "cross_entropy_loss": 7451.322265625,
+        "KL_divergence": 143561.484375,
+        "description_length": 151012.8125,
+        "accuracy": 0.30916541814804077
+    },
+    {
+        "cross_entropy_loss": 7443.4404296875,
+        "KL_divergence": 143461.828125,
+        "description_length": 150905.265625,
+        "accuracy": 0.30888035893440247
+    },
+    {
+        "cross_entropy_loss": 7388.947265625,
+        "KL_divergence": 143364.234375,
+        "description_length": 150753.1875,
+        "accuracy": 0.3087835907936096
+    },
+    {
+        "cross_entropy_loss": 7393.806640625,
+        "KL_divergence": 143268.140625,
+        "description_length": 150661.9375,
+        "accuracy": 0.30908703804016113
+    },
+    {
+        "cross_entropy_loss": 7408.7939453125,
+        "KL_divergence": 143172.078125,
+        "description_length": 150580.875,
+        "accuracy": 0.3087867796421051
+    },
+    {
+        "cross_entropy_loss": 7324.56982421875,
+        "KL_divergence": 143075.375,
+        "description_length": 150399.9375,
+        "accuracy": 0.30897945165634155
+    },
+    {
+        "cross_entropy_loss": 7368.5341796875,
+        "KL_divergence": 142980.484375,
+        "description_length": 150349.015625,
+        "accuracy": 0.308576762676239
+    },
+    {
+        "cross_entropy_loss": 7395.193359375,
+        "KL_divergence": 142884.421875,
+        "description_length": 150279.625,
+        "accuracy": 0.3089827001094818
+    },
+    {
+        "cross_entropy_loss": 7361.64453125,
+        "KL_divergence": 142787.109375,
+        "description_length": 150148.75,
+        "accuracy": 0.3089752793312073
+    },
+    {
+        "cross_entropy_loss": 7294.875,
+        "KL_divergence": 142689.78125,
+        "description_length": 149984.65625,
+        "accuracy": 0.3089855909347534
+    },
+    {
+        "cross_entropy_loss": 7224.89453125,
+        "KL_divergence": 142590.109375,
+        "description_length": 149815.0,
+        "accuracy": 0.30877581238746643
+    },
+    {
+        "cross_entropy_loss": 7325.0654296875,
+        "KL_divergence": 142492.375,
+        "description_length": 149817.4375,
+        "accuracy": 0.3085935711860657
+    },
+    {
+        "cross_entropy_loss": 7278.703125,
+        "KL_divergence": 142395.6875,
+        "description_length": 149674.390625,
+        "accuracy": 0.3089277744293213
+    },
+    {
+        "cross_entropy_loss": 7247.58203125,
+        "KL_divergence": 142297.6875,
+        "description_length": 149545.28125,
+        "accuracy": 0.30917948484420776
+    },
+    {
+        "cross_entropy_loss": 7286.673828125,
+        "KL_divergence": 142200.25,
+        "description_length": 149486.921875,
+        "accuracy": 0.3091605305671692
+    },
+    {
+        "cross_entropy_loss": 7275.0224609375,
+        "KL_divergence": 142102.5625,
+        "description_length": 149377.59375,
+        "accuracy": 0.3090103268623352
+    },
+    {
+        "cross_entropy_loss": 7277.3486328125,
+        "KL_divergence": 142004.71875,
+        "description_length": 149282.0625,
+        "accuracy": 0.3091973066329956
+    },
+    {
+        "cross_entropy_loss": 7210.87158203125,
+        "KL_divergence": 141907.53125,
+        "description_length": 149118.40625,
+        "accuracy": 0.3090384602546692
+    },
+    {
+        "cross_entropy_loss": 7123.9775390625,
+        "KL_divergence": 141811.953125,
+        "description_length": 148935.9375,
+        "accuracy": 0.3094586730003357
+    },
+    {
+        "cross_entropy_loss": 7105.15283203125,
+        "KL_divergence": 141716.890625,
+        "description_length": 148822.046875,
+        "accuracy": 0.30942851305007935
+    },
+    {
+        "cross_entropy_loss": 7142.490234375,
+        "KL_divergence": 141621.484375,
+        "description_length": 148763.96875,
+        "accuracy": 0.30946069955825806
+    },
+    {
+        "cross_entropy_loss": 7114.205078125,
+        "KL_divergence": 141524.21875,
+        "description_length": 148638.4375,
+        "accuracy": 0.3090609312057495
+    },
+    {
+        "cross_entropy_loss": 7128.3505859375,
+        "KL_divergence": 141428.421875,
+        "description_length": 148556.78125,
+        "accuracy": 0.309395432472229
+    },
+    {
+        "cross_entropy_loss": 7198.82421875,
+        "KL_divergence": 141331.953125,
+        "description_length": 148530.78125,
+        "accuracy": 0.30929210782051086
+    },
+    {
+        "cross_entropy_loss": 7191.1396484375,
+        "KL_divergence": 141234.3125,
+        "description_length": 148425.453125,
+        "accuracy": 0.30945655703544617
+    },
+    {
+        "cross_entropy_loss": 7137.318359375,
+        "KL_divergence": 141138.875,
+        "description_length": 148276.1875,
+        "accuracy": 0.30938130617141724
+    },
+    {
+        "cross_entropy_loss": 7128.185546875,
+        "KL_divergence": 141041.828125,
+        "description_length": 148170.0,
+        "accuracy": 0.30914878845214844
+    },
+    {
+        "cross_entropy_loss": 7134.7705078125,
+        "KL_divergence": 140946.234375,
+        "description_length": 148081.0,
+        "accuracy": 0.3095003664493561
+    },
+    {
+        "cross_entropy_loss": 7139.3134765625,
+        "KL_divergence": 140851.21875,
+        "description_length": 147990.53125,
+        "accuracy": 0.309356153011322
+    },
+    {
+        "cross_entropy_loss": 7120.58935546875,
+        "KL_divergence": 140757.40625,
+        "description_length": 147878.0,
+        "accuracy": 0.3094409704208374
+    },
+    {
+        "cross_entropy_loss": 7155.4228515625,
+        "KL_divergence": 140664.453125,
+        "description_length": 147819.875,
+        "accuracy": 0.30947351455688477
+    },
+    {
+        "cross_entropy_loss": 7023.5732421875,
+        "KL_divergence": 140569.34375,
+        "description_length": 147592.921875,
+        "accuracy": 0.3094070553779602
+    },
+    {
+        "cross_entropy_loss": 7068.19140625,
+        "KL_divergence": 140475.75,
+        "description_length": 147543.9375,
+        "accuracy": 0.30921459197998047
+    },
+    {
+        "cross_entropy_loss": 7008.4033203125,
+        "KL_divergence": 140384.59375,
+        "description_length": 147393.0,
+        "accuracy": 0.30956435203552246
+    },
+    {
+        "cross_entropy_loss": 7043.294921875,
+        "KL_divergence": 140291.921875,
+        "description_length": 147335.21875,
+        "accuracy": 0.30975162982940674
+    },
+    {
+        "cross_entropy_loss": 6997.84765625,
+        "KL_divergence": 140196.8125,
+        "description_length": 147194.65625,
+        "accuracy": 0.3095873296260834
+    },
+    {
+        "cross_entropy_loss": 7059.2421875,
+        "KL_divergence": 140102.171875,
+        "description_length": 147161.40625,
+        "accuracy": 0.30948716402053833
+    },
+    {
+        "cross_entropy_loss": 7038.3603515625,
+        "KL_divergence": 140007.609375,
+        "description_length": 147045.96875,
+        "accuracy": 0.30965274572372437
+    },
+    {
+        "cross_entropy_loss": 7016.87451171875,
+        "KL_divergence": 139911.4375,
+        "description_length": 146928.3125,
+        "accuracy": 0.3095510005950928
+    },
+    {
+        "cross_entropy_loss": 6920.81005859375,
+        "KL_divergence": 139817.125,
+        "description_length": 146737.9375,
+        "accuracy": 0.30962270498275757
+    },
+    {
+        "cross_entropy_loss": 6957.3564453125,
+        "KL_divergence": 139724.515625,
+        "description_length": 146681.875,
+        "accuracy": 0.30975523591041565
+    },
+    {
+        "cross_entropy_loss": 7003.8779296875,
+        "KL_divergence": 139629.609375,
+        "description_length": 146633.5,
+        "accuracy": 0.3095027804374695
+    },
+    {
+        "cross_entropy_loss": 7040.67919921875,
+        "KL_divergence": 139532.890625,
+        "description_length": 146573.5625,
+        "accuracy": 0.3095124363899231
+    },
+    {
+        "cross_entropy_loss": 7017.306640625,
+        "KL_divergence": 139435.640625,
+        "description_length": 146452.9375,
+        "accuracy": 0.30948781967163086
+    },
+    {
+        "cross_entropy_loss": 6957.94775390625,
+        "KL_divergence": 139341.828125,
+        "description_length": 146299.78125,
+        "accuracy": 0.3098285496234894
+    },
+    {
+        "cross_entropy_loss": 6941.26953125,
+        "KL_divergence": 139248.4375,
+        "description_length": 146189.703125,
+        "accuracy": 0.30977219343185425
+    },
+    {
+        "cross_entropy_loss": 6934.49609375,
+        "KL_divergence": 139157.8125,
+        "description_length": 146092.3125,
+        "accuracy": 0.3100450336933136
+    },
+    {
+        "cross_entropy_loss": 7124.6416015625,
+        "KL_divergence": 139064.546875,
+        "description_length": 146189.1875,
+        "accuracy": 0.3093409538269043
+    },
+    {
+        "cross_entropy_loss": 6935.03515625,
+        "KL_divergence": 138970.15625,
+        "description_length": 145905.1875,
+        "accuracy": 0.309381902217865
+    },
+    {
+        "cross_entropy_loss": 6901.9072265625,
+        "KL_divergence": 138875.5625,
+        "description_length": 145777.46875,
+        "accuracy": 0.3098488450050354
+    },
+    {
+        "cross_entropy_loss": 6942.35205078125,
+        "KL_divergence": 138780.546875,
+        "description_length": 145722.90625,
+        "accuracy": 0.3096833825111389
+    },
+    {
+        "cross_entropy_loss": 6929.69921875,
+        "KL_divergence": 138687.40625,
+        "description_length": 145617.09375,
+        "accuracy": 0.30951619148254395
+    },
+    {
+        "cross_entropy_loss": 6893.9111328125,
+        "KL_divergence": 138594.9375,
+        "description_length": 145488.84375,
+        "accuracy": 0.30963796377182007
+    },
+    {
+        "cross_entropy_loss": 6870.63037109375,
+        "KL_divergence": 138503.375,
+        "description_length": 145374.0,
+        "accuracy": 0.30985599756240845
+    },
+    {
+        "cross_entropy_loss": 6856.01806640625,
+        "KL_divergence": 138410.984375,
+        "description_length": 145267.0,
+        "accuracy": 0.30985599756240845
+    },
+    {
+        "cross_entropy_loss": 6894.7666015625,
+        "KL_divergence": 138318.609375,
+        "description_length": 145213.375,
+        "accuracy": 0.30970537662506104
+    },
+    {
+        "cross_entropy_loss": 6810.2783203125,
+        "KL_divergence": 138227.84375,
+        "description_length": 145038.125,
+        "accuracy": 0.3100486397743225
+    },
+    {
+        "cross_entropy_loss": 6894.90673828125,
+        "KL_divergence": 138133.703125,
+        "description_length": 145028.609375,
+        "accuracy": 0.30976057052612305
+    },
+    {
+        "cross_entropy_loss": 6842.5185546875,
+        "KL_divergence": 138041.390625,
+        "description_length": 144883.90625,
+        "accuracy": 0.309745192527771
+    },
+    {
+        "cross_entropy_loss": 6844.31982421875,
+        "KL_divergence": 137949.15625,
+        "description_length": 144793.46875,
+        "accuracy": 0.30997562408447266
+    },
+    {
+        "cross_entropy_loss": 6840.771484375,
+        "KL_divergence": 137857.75,
+        "description_length": 144698.515625,
+        "accuracy": 0.3098604679107666
+    },
+    {
+        "cross_entropy_loss": 6776.8095703125,
+        "KL_divergence": 137767.421875,
+        "description_length": 144544.21875,
+        "accuracy": 0.310136616230011
+    },
+    {
+        "cross_entropy_loss": 6882.0087890625,
+        "KL_divergence": 137674.09375,
+        "description_length": 144556.09375,
+        "accuracy": 0.3098033666610718
+    },
+    {
+        "cross_entropy_loss": 6840.9462890625,
+        "KL_divergence": 137580.453125,
+        "description_length": 144421.40625,
+        "accuracy": 0.3099163770675659
+    },
+    {
+        "cross_entropy_loss": 6865.53173828125,
+        "KL_divergence": 137487.609375,
+        "description_length": 144353.140625,
+        "accuracy": 0.3097473382949829
+    },
+    {
+        "cross_entropy_loss": 6837.7412109375,
+        "KL_divergence": 137397.0625,
+        "description_length": 144234.8125,
+        "accuracy": 0.3099921941757202
+    },
+    {
+        "cross_entropy_loss": 6855.5732421875,
+        "KL_divergence": 137305.484375,
+        "description_length": 144161.0625,
+        "accuracy": 0.31001386046409607
+    },
+    {
+        "cross_entropy_loss": 6869.7890625,
+        "KL_divergence": 137212.703125,
+        "description_length": 144082.5,
+        "accuracy": 0.31005531549453735
+    },
+    {
+        "cross_entropy_loss": 6870.7099609375,
+        "KL_divergence": 137118.34375,
+        "description_length": 143989.0625,
+        "accuracy": 0.3099028766155243
+    },
+    {
+        "cross_entropy_loss": 6818.7509765625,
+        "KL_divergence": 137025.734375,
+        "description_length": 143844.484375,
+        "accuracy": 0.3099421262741089
+    },
+    {
+        "cross_entropy_loss": 6828.46875,
+        "KL_divergence": 136933.75,
+        "description_length": 143762.21875,
+        "accuracy": 0.3097211718559265
+    },
+    {
+        "cross_entropy_loss": 6749.712890625,
+        "KL_divergence": 136843.359375,
+        "description_length": 143593.0625,
+        "accuracy": 0.3099927306175232
+    },
+    {
+        "cross_entropy_loss": 6797.26611328125,
+        "KL_divergence": 136750.828125,
+        "description_length": 143548.09375,
+        "accuracy": 0.3099971413612366
+    },
+    {
+        "cross_entropy_loss": 6761.37890625,
+        "KL_divergence": 136659.296875,
+        "description_length": 143420.671875,
+        "accuracy": 0.31004244089126587
+    },
+    {
+        "cross_entropy_loss": 6758.4833984375,
+        "KL_divergence": 136567.09375,
+        "description_length": 143325.578125,
+        "accuracy": 0.3102770447731018
+    },
+    {
+        "cross_entropy_loss": 6861.2998046875,
+        "KL_divergence": 136475.0,
+        "description_length": 143336.3125,
+        "accuracy": 0.309867799282074
+    },
+    {
+        "cross_entropy_loss": 6820.9189453125,
+        "KL_divergence": 136382.8125,
+        "description_length": 143203.71875,
+        "accuracy": 0.3102343678474426
+    },
+    {
+        "cross_entropy_loss": 6794.0791015625,
+        "KL_divergence": 136292.03125,
+        "description_length": 143086.109375,
+        "accuracy": 0.31000179052352905
+    },
+    {
+        "cross_entropy_loss": 6692.83935546875,
+        "KL_divergence": 136201.296875,
+        "description_length": 142894.125,
+        "accuracy": 0.31051766872406006
+    },
+    {
+        "cross_entropy_loss": 6776.529296875,
+        "KL_divergence": 136109.5,
+        "description_length": 142886.03125,
+        "accuracy": 0.3100358247756958
+    },
+    {
+        "cross_entropy_loss": 6843.1669921875,
+        "KL_divergence": 136020.390625,
+        "description_length": 142863.5625,
+        "accuracy": 0.31003326177597046
+    },
+    {
+        "cross_entropy_loss": 6823.10546875,
+        "KL_divergence": 135932.203125,
+        "description_length": 142755.3125,
+        "accuracy": 0.30996569991111755
+    },
+    {
+        "cross_entropy_loss": 6727.5546875,
+        "KL_divergence": 135843.90625,
+        "description_length": 142571.46875,
+        "accuracy": 0.3102349638938904
+    },
+    {
+        "cross_entropy_loss": 6840.2763671875,
+        "KL_divergence": 135755.59375,
+        "description_length": 142595.875,
+        "accuracy": 0.30966708064079285
+    },
+    {
+        "cross_entropy_loss": 6748.87841796875,
+        "KL_divergence": 135665.890625,
+        "description_length": 142414.765625,
+        "accuracy": 0.309984415769577
+    },
+    {
+        "cross_entropy_loss": 6701.9853515625,
+        "KL_divergence": 135574.328125,
+        "description_length": 142276.3125,
+        "accuracy": 0.3101009726524353
+    },
+    {
+        "cross_entropy_loss": 6701.17578125,
+        "KL_divergence": 135482.65625,
+        "description_length": 142183.828125,
+        "accuracy": 0.31002265214920044
+    },
+    {
+        "cross_entropy_loss": 6711.484375,
+        "KL_divergence": 135393.625,
+        "description_length": 142105.109375,
+        "accuracy": 0.310248464345932
+    },
+    {
+        "cross_entropy_loss": 6725.92236328125,
+        "KL_divergence": 135303.890625,
+        "description_length": 142029.8125,
+        "accuracy": 0.31008201837539673
+    },
+    {
+        "cross_entropy_loss": 6746.326171875,
+        "KL_divergence": 135217.59375,
+        "description_length": 141963.921875,
+        "accuracy": 0.31005918979644775
+    },
+    {
+        "cross_entropy_loss": 6747.2470703125,
+        "KL_divergence": 135129.90625,
+        "description_length": 141877.15625,
+        "accuracy": 0.31007856130599976
+    },
+    {
+        "cross_entropy_loss": 6744.18505859375,
+        "KL_divergence": 135043.625,
+        "description_length": 141787.8125,
+        "accuracy": 0.3100224733352661
+    },
+    {
+        "cross_entropy_loss": 6796.58203125,
+        "KL_divergence": 134956.0,
+        "description_length": 141752.578125,
+        "accuracy": 0.3101651072502136
+    },
+    {
+        "cross_entropy_loss": 6664.96826171875,
+        "KL_divergence": 134865.234375,
+        "description_length": 141530.203125,
+        "accuracy": 0.3099457025527954
+    },
+    {
+        "cross_entropy_loss": 6680.26806640625,
+        "KL_divergence": 134776.5625,
+        "description_length": 141456.84375,
+        "accuracy": 0.310232937335968
+    },
+    {
+        "cross_entropy_loss": 6653.5009765625,
+        "KL_divergence": 134690.703125,
+        "description_length": 141344.203125,
+        "accuracy": 0.31045061349868774
+    },
+    {
+        "cross_entropy_loss": 6694.3955078125,
+        "KL_divergence": 134602.40625,
+        "description_length": 141296.796875,
+        "accuracy": 0.31032291054725647
+    },
+    {
+        "cross_entropy_loss": 6599.9404296875,
+        "KL_divergence": 134514.515625,
+        "description_length": 141114.453125,
+        "accuracy": 0.3101791739463806
+    },
+    {
+        "cross_entropy_loss": 6749.185546875,
+        "KL_divergence": 134427.640625,
+        "description_length": 141176.828125,
+        "accuracy": 0.3100546598434448
+    },
+    {
+        "cross_entropy_loss": 6681.669921875,
+        "KL_divergence": 134340.890625,
+        "description_length": 141022.5625,
+        "accuracy": 0.31015661358833313
+    },
+    {
+        "cross_entropy_loss": 6700.3330078125,
+        "KL_divergence": 134256.5625,
+        "description_length": 140956.890625,
+        "accuracy": 0.31011849641799927
+    },
+    {
+        "cross_entropy_loss": 6691.0234375,
+        "KL_divergence": 134172.765625,
+        "description_length": 140863.78125,
+        "accuracy": 0.3102962374687195
+    },
+    {
+        "cross_entropy_loss": 6771.7236328125,
+        "KL_divergence": 134088.875,
+        "description_length": 140860.59375,
+        "accuracy": 0.3099846839904785
+    },
+    {
+        "cross_entropy_loss": 6696.0400390625,
+        "KL_divergence": 134005.625,
+        "description_length": 140701.65625,
+        "accuracy": 0.31010109186172485
+    },
+    {
+        "cross_entropy_loss": 6641.46484375,
+        "KL_divergence": 133919.375,
+        "description_length": 140560.84375,
+        "accuracy": 0.3103167712688446
+    },
+    {
+        "cross_entropy_loss": 6690.328125,
+        "KL_divergence": 133835.96875,
+        "description_length": 140526.296875,
+        "accuracy": 0.3103184998035431
+    },
+    {
+        "cross_entropy_loss": 6697.7060546875,
+        "KL_divergence": 133749.609375,
+        "description_length": 140447.3125,
+        "accuracy": 0.3099517226219177
+    },
+    {
+        "cross_entropy_loss": 6595.4326171875,
+        "KL_divergence": 133662.140625,
+        "description_length": 140257.5625,
+        "accuracy": 0.3104613423347473
+    },
+    {
+        "cross_entropy_loss": 6625.57763671875,
+        "KL_divergence": 133571.5625,
+        "description_length": 140197.140625,
+        "accuracy": 0.3104788661003113
+    },
+    {
+        "cross_entropy_loss": 6653.099609375,
+        "KL_divergence": 133480.921875,
+        "description_length": 140134.03125,
+        "accuracy": 0.31014880537986755
+    },
+    {
+        "cross_entropy_loss": 6666.7529296875,
+        "KL_divergence": 133390.703125,
+        "description_length": 140057.46875,
+        "accuracy": 0.3100575804710388
+    },
+    {
+        "cross_entropy_loss": 6564.1484375,
+        "KL_divergence": 133302.390625,
+        "description_length": 139866.53125,
+        "accuracy": 0.31036320328712463
+    },
+    {
+        "cross_entropy_loss": 6629.6484375,
+        "KL_divergence": 133219.875,
+        "description_length": 139849.53125,
+        "accuracy": 0.31035470962524414
+    },
+    {
+        "cross_entropy_loss": 6605.150390625,
+        "KL_divergence": 133136.390625,
+        "description_length": 139741.546875,
+        "accuracy": 0.3101545572280884
+    },
+    {
+        "cross_entropy_loss": 6688.9853515625,
+        "KL_divergence": 133053.421875,
+        "description_length": 139742.40625,
+        "accuracy": 0.3103048503398895
+    },
+    {
+        "cross_entropy_loss": 6603.2890625,
+        "KL_divergence": 132970.375,
+        "description_length": 139573.65625,
+        "accuracy": 0.31033945083618164
+    },
+    {
+        "cross_entropy_loss": 6659.2705078125,
+        "KL_divergence": 132888.125,
+        "description_length": 139547.40625,
+        "accuracy": 0.3100166916847229
+    },
+    {
+        "cross_entropy_loss": 6588.9609375,
+        "KL_divergence": 132805.359375,
+        "description_length": 139394.3125,
+        "accuracy": 0.31063827872276306
+    },
+    {
+        "cross_entropy_loss": 6643.90478515625,
+        "KL_divergence": 132721.796875,
+        "description_length": 139365.703125,
+        "accuracy": 0.3103703558444977
+    },
+    {
+        "cross_entropy_loss": 6660.513671875,
+        "KL_divergence": 132637.015625,
+        "description_length": 139297.53125,
+        "accuracy": 0.31033241748809814
+    },
+    {
+        "cross_entropy_loss": 6641.375,
+        "KL_divergence": 132552.203125,
+        "description_length": 139193.578125,
+        "accuracy": 0.310584157705307
+    },
+    {
+        "cross_entropy_loss": 6587.71875,
+        "KL_divergence": 132468.484375,
+        "description_length": 139056.203125,
+        "accuracy": 0.3104013204574585
+    },
+    {
+        "cross_entropy_loss": 6594.1708984375,
+        "KL_divergence": 132385.34375,
+        "description_length": 138979.5,
+        "accuracy": 0.3104446828365326
+    },
+    {
+        "cross_entropy_loss": 6538.8671875,
+        "KL_divergence": 132301.015625,
+        "description_length": 138839.875,
+        "accuracy": 0.3105507791042328
+    },
+    {
+        "cross_entropy_loss": 6621.45654296875,
+        "KL_divergence": 132216.546875,
+        "description_length": 138838.0,
+        "accuracy": 0.31031790375709534
+    },
+    {
+        "cross_entropy_loss": 6611.134765625,
+        "KL_divergence": 132132.671875,
+        "description_length": 138743.8125,
+        "accuracy": 0.3104846775531769
+    },
+    {
+        "cross_entropy_loss": 6600.2880859375,
+        "KL_divergence": 132050.703125,
+        "description_length": 138651.0,
+        "accuracy": 0.31014639139175415
+    },
+    {
+        "cross_entropy_loss": 6615.7548828125,
+        "KL_divergence": 131969.75,
+        "description_length": 138585.5,
+        "accuracy": 0.31059104204177856
+    },
+    {
+        "cross_entropy_loss": 6600.400390625,
+        "KL_divergence": 131887.90625,
+        "description_length": 138488.3125,
+        "accuracy": 0.3103009760379791
+    },
+    {
+        "cross_entropy_loss": 6554.8076171875,
+        "KL_divergence": 131803.734375,
+        "description_length": 138358.546875,
+        "accuracy": 0.3101922273635864
+    },
+    {
+        "cross_entropy_loss": 6633.1845703125,
+        "KL_divergence": 131718.640625,
+        "description_length": 138351.828125,
+        "accuracy": 0.3102930188179016
+    },
+    {
+        "cross_entropy_loss": 6498.533203125,
+        "KL_divergence": 131633.984375,
+        "description_length": 138132.515625,
+        "accuracy": 0.3105784058570862
+    },
+    {
+        "cross_entropy_loss": 6605.876953125,
+        "KL_divergence": 131546.265625,
+        "description_length": 138152.140625,
+        "accuracy": 0.31032106280326843
+    },
+    {
+        "cross_entropy_loss": 6549.64892578125,
+        "KL_divergence": 131463.359375,
+        "description_length": 138013.0,
+        "accuracy": 0.3105320930480957
+    },
+    {
+        "cross_entropy_loss": 6546.92822265625,
+        "KL_divergence": 131378.421875,
+        "description_length": 137925.34375,
+        "accuracy": 0.3103492856025696
+    },
+    {
+        "cross_entropy_loss": 6612.861328125,
+        "KL_divergence": 131293.6875,
+        "description_length": 137906.5625,
+        "accuracy": 0.3101452589035034
+    },
+    {
+        "cross_entropy_loss": 6648.74951171875,
+        "KL_divergence": 131212.28125,
+        "description_length": 137861.03125,
+        "accuracy": 0.3102529048919678
+    },
+    {
+        "cross_entropy_loss": 6659.49267578125,
+        "KL_divergence": 131132.828125,
+        "description_length": 137792.3125,
+        "accuracy": 0.31067875027656555
+    },
+    {
+        "cross_entropy_loss": 6532.02490234375,
+        "KL_divergence": 131049.6640625,
+        "description_length": 137581.6875,
+        "accuracy": 0.3107527494430542
+    },
+    {
+        "cross_entropy_loss": 6597.3095703125,
+        "KL_divergence": 130967.53125,
+        "description_length": 137564.84375,
+        "accuracy": 0.31043893098831177
+    },
+    {
+        "cross_entropy_loss": 6616.61181640625,
+        "KL_divergence": 130887.3203125,
+        "description_length": 137503.9375,
+        "accuracy": 0.31045302748680115
+    },
+    {
+        "cross_entropy_loss": 6585.96484375,
+        "KL_divergence": 130807.7265625,
+        "description_length": 137393.6875,
+        "accuracy": 0.3104110360145569
+    },
+    {
+        "cross_entropy_loss": 6543.2060546875,
+        "KL_divergence": 130728.9609375,
+        "description_length": 137272.15625,
+        "accuracy": 0.3108258843421936
+    },
+    {
+        "cross_entropy_loss": 6524.8740234375,
+        "KL_divergence": 130649.625,
+        "description_length": 137174.5,
+        "accuracy": 0.3104044198989868
+    },
+    {
+        "cross_entropy_loss": 6560.43408203125,
+        "KL_divergence": 130569.9921875,
+        "description_length": 137130.4375,
+        "accuracy": 0.31030869483947754
+    },
+    {
+        "cross_entropy_loss": 6572.14794921875,
+        "KL_divergence": 130491.4140625,
+        "description_length": 137063.5625,
+        "accuracy": 0.3105010390281677
+    },
+    {
+        "cross_entropy_loss": 6493.017578125,
+        "KL_divergence": 130412.2578125,
+        "description_length": 136905.28125,
+        "accuracy": 0.31034553050994873
+    },
+    {
+        "cross_entropy_loss": 6516.8388671875,
+        "KL_divergence": 130334.59375,
+        "description_length": 136851.4375,
+        "accuracy": 0.3106491267681122
+    },
+    {
+        "cross_entropy_loss": 6576.763671875,
+        "KL_divergence": 130255.7265625,
+        "description_length": 136832.5,
+        "accuracy": 0.3103465437889099
+    },
+    {
+        "cross_entropy_loss": 6527.5107421875,
+        "KL_divergence": 130178.6171875,
+        "description_length": 136706.125,
+        "accuracy": 0.3107495903968811
+    },
+    {
+        "cross_entropy_loss": 6512.43798828125,
+        "KL_divergence": 130101.5546875,
+        "description_length": 136614.0,
+        "accuracy": 0.31084734201431274
+    },
+    {
+        "cross_entropy_loss": 6493.7431640625,
+        "KL_divergence": 130023.2421875,
+        "description_length": 136516.984375,
+        "accuracy": 0.310567170381546
+    },
+    {
+        "cross_entropy_loss": 6607.88037109375,
+        "KL_divergence": 129945.5703125,
+        "description_length": 136553.453125,
+        "accuracy": 0.3105432987213135
+    },
+    {
+        "cross_entropy_loss": 6512.9033203125,
+        "KL_divergence": 129868.3359375,
+        "description_length": 136381.25,
+        "accuracy": 0.31052032113075256
+    },
+    {
+        "cross_entropy_loss": 6487.44921875,
+        "KL_divergence": 129787.765625,
+        "description_length": 136275.21875,
+        "accuracy": 0.31068652868270874
+    },
+    {
+        "cross_entropy_loss": 6557.44287109375,
+        "KL_divergence": 129706.625,
+        "description_length": 136264.0625,
+        "accuracy": 0.31058141589164734
+    },
+    {
+        "cross_entropy_loss": 6446.24169921875,
+        "KL_divergence": 129625.1796875,
+        "description_length": 136071.421875,
+        "accuracy": 0.310591459274292
+    },
+    {
+        "cross_entropy_loss": 6522.54833984375,
+        "KL_divergence": 129545.59375,
+        "description_length": 136068.15625,
+        "accuracy": 0.31091922521591187
+    },
+    {
+        "cross_entropy_loss": 6552.359375,
+        "KL_divergence": 129468.8046875,
+        "description_length": 136021.15625,
+        "accuracy": 0.31032925844192505
+    },
+    {
+        "cross_entropy_loss": 6558.32421875,
+        "KL_divergence": 129391.7265625,
+        "description_length": 135950.0625,
+        "accuracy": 0.310524582862854
+    },
+    {
+        "cross_entropy_loss": 6519.794921875,
+        "KL_divergence": 129314.7734375,
+        "description_length": 135834.5625,
+        "accuracy": 0.3105933368206024
+    },
+    {
+        "cross_entropy_loss": 6571.2587890625,
+        "KL_divergence": 129235.34375,
+        "description_length": 135806.59375,
+        "accuracy": 0.31040459871292114
+    },
+    {
+        "cross_entropy_loss": 6548.275390625,
+        "KL_divergence": 129153.6484375,
+        "description_length": 135701.9375,
+        "accuracy": 0.3105263113975525
+    },
+    {
+        "cross_entropy_loss": 6525.0234375,
+        "KL_divergence": 129072.6875,
+        "description_length": 135597.71875,
+        "accuracy": 0.3105986714363098
+    },
+    {
+        "cross_entropy_loss": 6586.388671875,
+        "KL_divergence": 128992.125,
+        "description_length": 135578.515625,
+        "accuracy": 0.3106728196144104
+    },
+    {
+        "cross_entropy_loss": 6508.9716796875,
+        "KL_divergence": 128914.640625,
+        "description_length": 135423.625,
+        "accuracy": 0.3103916645050049
+    },
+    {
+        "cross_entropy_loss": 6523.9921875,
+        "KL_divergence": 128838.1953125,
+        "description_length": 135362.1875,
+        "accuracy": 0.31029796600341797
+    },
+    {
+        "cross_entropy_loss": 6478.64404296875,
+        "KL_divergence": 128762.2890625,
+        "description_length": 135240.9375,
+        "accuracy": 0.31061190366744995
+    },
+    {
+        "cross_entropy_loss": 6488.53466796875,
+        "KL_divergence": 128689.3515625,
+        "description_length": 135177.875,
+        "accuracy": 0.3105863034725189
+    },
+    {
+        "cross_entropy_loss": 6461.10546875,
+        "KL_divergence": 128615.125,
+        "description_length": 135076.21875,
+        "accuracy": 0.3106350600719452
+    },
+    {
+        "cross_entropy_loss": 6502.65234375,
+        "KL_divergence": 128542.71875,
+        "description_length": 135045.375,
+        "accuracy": 0.3105243444442749
+    },
+    {
+        "cross_entropy_loss": 6571.79736328125,
+        "KL_divergence": 128470.8046875,
+        "description_length": 135042.59375,
+        "accuracy": 0.3103209137916565
+    },
+    {
+        "cross_entropy_loss": 6430.06201171875,
+        "KL_divergence": 128396.875,
+        "description_length": 134826.9375,
+        "accuracy": 0.3106958270072937
+    },
+    {
+        "cross_entropy_loss": 6539.7900390625,
+        "KL_divergence": 128321.171875,
+        "description_length": 134860.96875,
+        "accuracy": 0.31045764684677124
+    },
+    {
+        "cross_entropy_loss": 6570.42919921875,
+        "KL_divergence": 128244.3828125,
+        "description_length": 134814.8125,
+        "accuracy": 0.3105027973651886
+    },
+    {
+        "cross_entropy_loss": 6550.6875,
+        "KL_divergence": 128167.2109375,
+        "description_length": 134717.90625,
+        "accuracy": 0.31030166149139404
+    },
+    {
+        "cross_entropy_loss": 6531.2021484375,
+        "KL_divergence": 128092.4140625,
+        "description_length": 134623.625,
+        "accuracy": 0.3104616701602936
+    },
+    {
+        "cross_entropy_loss": 6465.9248046875,
+        "KL_divergence": 128017.84375,
+        "description_length": 134483.765625,
+        "accuracy": 0.31083744764328003
+    },
+    {
+        "cross_entropy_loss": 6535.1953125,
+        "KL_divergence": 127942.5,
+        "description_length": 134477.6875,
+        "accuracy": 0.3107304573059082
+    },
+    {
+        "cross_entropy_loss": 6449.4755859375,
+        "KL_divergence": 127867.375,
+        "description_length": 134316.84375,
+        "accuracy": 0.3106802999973297
+    },
+    {
+        "cross_entropy_loss": 6508.87109375,
+        "KL_divergence": 127794.703125,
+        "description_length": 134303.578125,
+        "accuracy": 0.3107798099517822
+    },
+    {
+        "cross_entropy_loss": 6493.232421875,
+        "KL_divergence": 127720.3984375,
+        "description_length": 134213.625,
+        "accuracy": 0.3107462525367737
+    },
+    {
+        "cross_entropy_loss": 6463.38916015625,
+        "KL_divergence": 127644.1640625,
+        "description_length": 134107.546875,
+        "accuracy": 0.3102618455886841
+    },
+    {
+        "cross_entropy_loss": 6516.96630859375,
+        "KL_divergence": 127570.46875,
+        "description_length": 134087.4375,
+        "accuracy": 0.3105124235153198
+    },
+    {
+        "cross_entropy_loss": 6425.724609375,
+        "KL_divergence": 127495.8046875,
+        "description_length": 133921.53125,
+        "accuracy": 0.3107761740684509
+    },
+    {
+        "cross_entropy_loss": 6390.0595703125,
+        "KL_divergence": 127421.3984375,
+        "description_length": 133811.453125,
+        "accuracy": 0.3106420934200287
+    },
+    {
+        "cross_entropy_loss": 6505.130859375,
+        "KL_divergence": 127346.8359375,
+        "description_length": 133851.96875,
+        "accuracy": 0.3106856346130371
+    },
+    {
+        "cross_entropy_loss": 6478.53125,
+        "KL_divergence": 127273.265625,
+        "description_length": 133751.796875,
+        "accuracy": 0.3109082877635956
+    },
+    {
+        "cross_entropy_loss": 6440.2236328125,
+        "KL_divergence": 127201.3359375,
+        "description_length": 133641.5625,
+        "accuracy": 0.3109781742095947
+    },
+    {
+        "cross_entropy_loss": 6547.8447265625,
+        "KL_divergence": 127130.890625,
+        "description_length": 133678.734375,
+        "accuracy": 0.3104773163795471
+    },
+    {
+        "cross_entropy_loss": 6550.74560546875,
+        "KL_divergence": 127058.2421875,
+        "description_length": 133609.0,
+        "accuracy": 0.31038087606430054
+    },
+    {
+        "cross_entropy_loss": 6562.2783203125,
+        "KL_divergence": 126985.5703125,
+        "description_length": 133547.84375,
+        "accuracy": 0.31049084663391113
+    },
+    {
+        "cross_entropy_loss": 6431.568359375,
+        "KL_divergence": 126912.2578125,
+        "description_length": 133343.828125,
+        "accuracy": 0.3109140396118164
+    },
+    {
+        "cross_entropy_loss": 6458.1240234375,
+        "KL_divergence": 126839.484375,
+        "description_length": 133297.609375,
+        "accuracy": 0.3107839822769165
+    },
+    {
+        "cross_entropy_loss": 6463.13916015625,
+        "KL_divergence": 126767.8125,
+        "description_length": 133230.953125,
+        "accuracy": 0.31057149171829224
+    },
+    {
+        "cross_entropy_loss": 6442.3916015625,
+        "KL_divergence": 126697.390625,
+        "description_length": 133139.78125,
+        "accuracy": 0.31053268909454346
+    },
+    {
+        "cross_entropy_loss": 6468.3271484375,
+        "KL_divergence": 126626.5546875,
+        "description_length": 133094.875,
+        "accuracy": 0.31056690216064453
+    },
+    {
+        "cross_entropy_loss": 6441.45703125,
+        "KL_divergence": 126551.8984375,
+        "description_length": 132993.34375,
+        "accuracy": 0.3107679784297943
+    },
+    {
+        "cross_entropy_loss": 6525.8583984375,
+        "KL_divergence": 126477.359375,
+        "description_length": 133003.21875,
+        "accuracy": 0.31063300371170044
+    },
+    {
+        "cross_entropy_loss": 6401.0927734375,
+        "KL_divergence": 126403.0390625,
+        "description_length": 132804.125,
+        "accuracy": 0.3105628490447998
+    },
+    {
+        "cross_entropy_loss": 6416.89697265625,
+        "KL_divergence": 126330.640625,
+        "description_length": 132747.53125,
+        "accuracy": 0.31082993745803833
+    },
+    {
+        "cross_entropy_loss": 6383.3203125,
+        "KL_divergence": 126257.2734375,
+        "description_length": 132640.59375,
+        "accuracy": 0.31087440252304077
+    },
+    {
+        "cross_entropy_loss": 6498.3369140625,
+        "KL_divergence": 126183.90625,
+        "description_length": 132682.25,
+        "accuracy": 0.3107660412788391
+    },
+    {
+        "cross_entropy_loss": 6489.19189453125,
+        "KL_divergence": 126110.734375,
+        "description_length": 132599.9375,
+        "accuracy": 0.31071221828460693
+    },
+    {
+        "cross_entropy_loss": 6457.50439453125,
+        "KL_divergence": 126038.703125,
+        "description_length": 132496.21875,
+        "accuracy": 0.3108401298522949
+    },
+    {
+        "cross_entropy_loss": 6457.1630859375,
+        "KL_divergence": 125966.3828125,
+        "description_length": 132423.546875,
+        "accuracy": 0.3104507625102997
+    },
+    {
+        "cross_entropy_loss": 6468.05615234375,
+        "KL_divergence": 125892.9921875,
+        "description_length": 132361.046875,
+        "accuracy": 0.310713529586792
+    },
+    {
+        "cross_entropy_loss": 6424.8505859375,
+        "KL_divergence": 125818.8984375,
+        "description_length": 132243.75,
+        "accuracy": 0.3104202151298523
+    },
+    {
+        "cross_entropy_loss": 6533.69580078125,
+        "KL_divergence": 125748.0078125,
+        "description_length": 132281.71875,
+        "accuracy": 0.31054964661598206
+    },
+    {
+        "cross_entropy_loss": 6502.50048828125,
+        "KL_divergence": 125675.3671875,
+        "description_length": 132177.875,
+        "accuracy": 0.31073594093322754
+    },
+    {
+        "cross_entropy_loss": 6481.93359375,
+        "KL_divergence": 125605.7265625,
+        "description_length": 132087.65625,
+        "accuracy": 0.3105390667915344
+    },
+    {
+        "cross_entropy_loss": 6473.8837890625,
+        "KL_divergence": 125535.96875,
+        "description_length": 132009.84375,
+        "accuracy": 0.31051844358444214
+    },
+    {
+        "cross_entropy_loss": 6519.5478515625,
+        "KL_divergence": 125466.8984375,
+        "description_length": 131986.4375,
+        "accuracy": 0.31095489859580994
+    },
+    {
+        "cross_entropy_loss": 6396.2900390625,
+        "KL_divergence": 125397.390625,
+        "description_length": 131793.6875,
+        "accuracy": 0.3106876313686371
+    },
+    {
+        "cross_entropy_loss": 6446.0634765625,
+        "KL_divergence": 125327.625,
+        "description_length": 131773.6875,
+        "accuracy": 0.31091105937957764
+    },
+    {
+        "cross_entropy_loss": 6491.427734375,
+        "KL_divergence": 125254.5859375,
+        "description_length": 131746.015625,
+        "accuracy": 0.31064796447753906
+    },
+    {
+        "cross_entropy_loss": 6492.22314453125,
+        "KL_divergence": 125182.4921875,
+        "description_length": 131674.71875,
+        "accuracy": 0.3103659152984619
+    },
+    {
+        "cross_entropy_loss": 6475.53466796875,
+        "KL_divergence": 125115.875,
+        "description_length": 131591.40625,
+        "accuracy": 0.31059980392456055
+    },
+    {
+        "cross_entropy_loss": 6528.6201171875,
+        "KL_divergence": 125045.796875,
+        "description_length": 131574.421875,
+        "accuracy": 0.31064435839653015
+    },
+    {
+        "cross_entropy_loss": 6535.95361328125,
+        "KL_divergence": 124973.28125,
+        "description_length": 131509.234375,
+        "accuracy": 0.3106067180633545
+    },
+    {
+        "cross_entropy_loss": 6430.97998046875,
+        "KL_divergence": 124903.0234375,
+        "description_length": 131334.0,
+        "accuracy": 0.31070947647094727
+    },
+    {
+        "cross_entropy_loss": 6505.451171875,
+        "KL_divergence": 124832.328125,
+        "description_length": 131337.78125,
+        "accuracy": 0.3103693723678589
+    },
+    {
+        "cross_entropy_loss": 6432.380859375,
+        "KL_divergence": 124767.671875,
+        "description_length": 131200.046875,
+        "accuracy": 0.3109317421913147
+    },
+    {
+        "cross_entropy_loss": 6414.4990234375,
+        "KL_divergence": 124703.3125,
+        "description_length": 131117.8125,
+        "accuracy": 0.310767263174057
+    },
+    {
+        "cross_entropy_loss": 6357.2685546875,
+        "KL_divergence": 124633.1796875,
+        "description_length": 130990.453125,
+        "accuracy": 0.3107439875602722
+    },
+    {
+        "cross_entropy_loss": 6403.36962890625,
+        "KL_divergence": 124562.7890625,
+        "description_length": 130966.15625,
+        "accuracy": 0.3110925853252411
+    },
+    {
+        "cross_entropy_loss": 6494.0732421875,
+        "KL_divergence": 124494.96875,
+        "description_length": 130989.046875,
+        "accuracy": 0.3104953169822693
+    },
+    {
+        "cross_entropy_loss": 6490.39990234375,
+        "KL_divergence": 124425.671875,
+        "description_length": 130916.078125,
+        "accuracy": 0.31101739406585693
+    },
+    {
+        "cross_entropy_loss": 6379.267578125,
+        "KL_divergence": 124353.0234375,
+        "description_length": 130732.296875,
+        "accuracy": 0.31081509590148926
+    },
+    {
+        "cross_entropy_loss": 6441.7392578125,
+        "KL_divergence": 124280.9453125,
+        "description_length": 130722.6875,
+        "accuracy": 0.31038016080856323
+    },
+    {
+        "cross_entropy_loss": 6422.80859375,
+        "KL_divergence": 124211.5390625,
+        "description_length": 130634.34375,
+        "accuracy": 0.3109111487865448
+    },
+    {
+        "cross_entropy_loss": 6430.75732421875,
+        "KL_divergence": 124145.3359375,
+        "description_length": 130576.09375,
+        "accuracy": 0.31058469414711
+    },
+    {
+        "cross_entropy_loss": 6493.31005859375,
+        "KL_divergence": 124078.8359375,
+        "description_length": 130572.140625,
+        "accuracy": 0.3107016086578369
+    },
+    {
+        "cross_entropy_loss": 6405.5771484375,
+        "KL_divergence": 124012.34375,
+        "description_length": 130417.921875,
+        "accuracy": 0.3107503056526184
+    },
+    {
+        "cross_entropy_loss": 6481.87890625,
+        "KL_divergence": 123945.9609375,
+        "description_length": 130427.84375,
+        "accuracy": 0.31045377254486084
+    },
+    {
+        "cross_entropy_loss": 6437.84765625,
+        "KL_divergence": 123881.6796875,
+        "description_length": 130319.53125,
+        "accuracy": 0.31086188554763794
+    },
+    {
+        "cross_entropy_loss": 6385.443359375,
+        "KL_divergence": 123816.390625,
+        "description_length": 130201.828125,
+        "accuracy": 0.31086358428001404
+    },
+    {
+        "cross_entropy_loss": 6394.2216796875,
+        "KL_divergence": 123753.234375,
+        "description_length": 130147.453125,
+        "accuracy": 0.31075865030288696
+    },
+    {
+        "cross_entropy_loss": 6449.09765625,
+        "KL_divergence": 123690.0,
+        "description_length": 130139.09375,
+        "accuracy": 0.31078195571899414
+    },
+    {
+        "cross_entropy_loss": 6404.18212890625,
+        "KL_divergence": 123622.7578125,
+        "description_length": 130026.9375,
+        "accuracy": 0.3104615807533264
+    },
+    {
+        "cross_entropy_loss": 6464.9638671875,
+        "KL_divergence": 123556.4921875,
+        "description_length": 130021.453125,
+        "accuracy": 0.31081774830818176
+    },
+    {
+        "cross_entropy_loss": 6400.3447265625,
+        "KL_divergence": 123492.8125,
+        "description_length": 129893.15625,
+        "accuracy": 0.310791552066803
+    },
+    {
+        "cross_entropy_loss": 6424.08203125,
+        "KL_divergence": 123424.296875,
+        "description_length": 129848.375,
+        "accuracy": 0.31060871481895447
+    },
+    {
+        "cross_entropy_loss": 6397.0234375,
+        "KL_divergence": 123356.2109375,
+        "description_length": 129753.234375,
+        "accuracy": 0.3106321692466736
+    },
+    {
+        "cross_entropy_loss": 6311.2822265625,
+        "KL_divergence": 123289.6953125,
+        "description_length": 129600.984375,
+        "accuracy": 0.31098607182502747
+    },
+    {
+        "cross_entropy_loss": 6358.5673828125,
+        "KL_divergence": 123220.4375,
+        "description_length": 129579.0,
+        "accuracy": 0.31092366576194763
+    },
+    {
+        "cross_entropy_loss": 6401.36328125,
+        "KL_divergence": 123154.109375,
+        "description_length": 129555.46875,
+        "accuracy": 0.31070175766944885
+    },
+    {
+        "cross_entropy_loss": 6395.484375,
+        "KL_divergence": 123090.5546875,
+        "description_length": 129486.0390625,
+        "accuracy": 0.31094494462013245
+    },
+    {
+        "cross_entropy_loss": 6450.591796875,
+        "KL_divergence": 123026.5234375,
+        "description_length": 129477.109375,
+        "accuracy": 0.31074202060699463
+    },
+    {
+        "cross_entropy_loss": 6506.85400390625,
+        "KL_divergence": 122962.2890625,
+        "description_length": 129469.140625,
+        "accuracy": 0.3106951117515564
+    },
+    {
+        "cross_entropy_loss": 6433.416015625,
+        "KL_divergence": 122897.0546875,
+        "description_length": 129330.46875,
+        "accuracy": 0.3105897307395935
+    },
+    {
+        "cross_entropy_loss": 6472.423828125,
+        "KL_divergence": 122835.890625,
+        "description_length": 129308.3125,
+        "accuracy": 0.31069695949554443
+    },
+    {
+        "cross_entropy_loss": 6442.33203125,
+        "KL_divergence": 122775.0546875,
+        "description_length": 129217.390625,
+        "accuracy": 0.31073564291000366
+    },
+    {
+        "cross_entropy_loss": 6399.39453125,
+        "KL_divergence": 122711.953125,
+        "description_length": 129111.34375,
+        "accuracy": 0.3108096718788147
+    },
+    {
+        "cross_entropy_loss": 6423.51904296875,
+        "KL_divergence": 122645.6328125,
+        "description_length": 129069.1484375,
+        "accuracy": 0.31080466508865356
+    },
+    {
+        "cross_entropy_loss": 6396.2265625,
+        "KL_divergence": 122578.1875,
+        "description_length": 128974.4140625,
+        "accuracy": 0.3108122646808624
+    },
+    {
+        "cross_entropy_loss": 6468.51904296875,
+        "KL_divergence": 122511.1875,
+        "description_length": 128979.703125,
+        "accuracy": 0.3108453154563904
+    },
+    {
+        "cross_entropy_loss": 6416.09521484375,
+        "KL_divergence": 122449.015625,
+        "description_length": 128865.109375,
+        "accuracy": 0.31096237897872925
+    },
+    {
+        "cross_entropy_loss": 6459.20849609375,
+        "KL_divergence": 122384.3125,
+        "description_length": 128843.515625,
+        "accuracy": 0.3108011782169342
+    },
+    {
+        "cross_entropy_loss": 6459.75390625,
+        "KL_divergence": 122316.421875,
+        "description_length": 128776.171875,
+        "accuracy": 0.3107722997665405
+    },
+    {
+        "cross_entropy_loss": 6435.44189453125,
+        "KL_divergence": 122247.125,
+        "description_length": 128682.5625,
+        "accuracy": 0.31097084283828735
+    },
+    {
+        "cross_entropy_loss": 6516.25634765625,
+        "KL_divergence": 122178.8125,
+        "description_length": 128695.0625,
+        "accuracy": 0.31061965227127075
+    },
+    {
+        "cross_entropy_loss": 6405.89892578125,
+        "KL_divergence": 122108.8125,
+        "description_length": 128514.7109375,
+        "accuracy": 0.31089842319488525
+    },
+    {
+        "cross_entropy_loss": 6361.083984375,
+        "KL_divergence": 122039.7578125,
+        "description_length": 128400.84375,
+        "accuracy": 0.31104761362075806
+    },
+    {
+        "cross_entropy_loss": 6390.08740234375,
+        "KL_divergence": 121974.421875,
+        "description_length": 128364.5078125,
+        "accuracy": 0.31066280603408813
+    },
+    {
+        "cross_entropy_loss": 6505.7919921875,
+        "KL_divergence": 121913.1953125,
+        "description_length": 128418.984375,
+        "accuracy": 0.310632586479187
+    },
+    {
+        "cross_entropy_loss": 6335.5751953125,
+        "KL_divergence": 121847.21875,
+        "description_length": 128182.796875,
+        "accuracy": 0.31108957529067993
+    },
+    {
+        "cross_entropy_loss": 6396.6015625,
+        "KL_divergence": 121782.484375,
+        "description_length": 128179.0859375,
+        "accuracy": 0.31057626008987427
+    },
+    {
+        "cross_entropy_loss": 6416.45751953125,
+        "KL_divergence": 121721.1484375,
+        "description_length": 128137.609375,
+        "accuracy": 0.3110501766204834
+    },
+    {
+        "cross_entropy_loss": 6397.13330078125,
+        "KL_divergence": 121660.7734375,
+        "description_length": 128057.90625,
+        "accuracy": 0.31054890155792236
+    },
+    {
+        "cross_entropy_loss": 6392.25,
+        "KL_divergence": 121600.2890625,
+        "description_length": 127992.53125,
+        "accuracy": 0.31090572476387024
+    },
+    {
+        "cross_entropy_loss": 6442.8154296875,
+        "KL_divergence": 121539.890625,
+        "description_length": 127982.703125,
+        "accuracy": 0.3106124699115753
+    },
+    {
+        "cross_entropy_loss": 6477.4853515625,
+        "KL_divergence": 121479.734375,
+        "description_length": 127957.21875,
+        "accuracy": 0.3107757568359375
+    },
+    {
+        "cross_entropy_loss": 6344.40966796875,
+        "KL_divergence": 121419.9609375,
+        "description_length": 127764.375,
+        "accuracy": 0.3111899495124817
+    },
+    {
+        "cross_entropy_loss": 6455.8203125,
+        "KL_divergence": 121356.0625,
+        "description_length": 127811.8828125,
+        "accuracy": 0.31081700325012207
+    },
+    {
+        "cross_entropy_loss": 6413.3623046875,
+        "KL_divergence": 121290.7734375,
+        "description_length": 127704.140625,
+        "accuracy": 0.310710608959198
+    },
+    {
+        "cross_entropy_loss": 6438.48193359375,
+        "KL_divergence": 121228.4609375,
+        "description_length": 127666.9375,
+        "accuracy": 0.31105712056159973
+    },
+    {
+        "cross_entropy_loss": 6368.04052734375,
+        "KL_divergence": 121165.296875,
+        "description_length": 127533.3359375,
+        "accuracy": 0.3111647963523865
+    },
+    {
+        "cross_entropy_loss": 6412.849609375,
+        "KL_divergence": 121102.7578125,
+        "description_length": 127515.609375,
+        "accuracy": 0.31081828474998474
+    },
+    {
+        "cross_entropy_loss": 6332.60546875,
+        "KL_divergence": 121042.3203125,
+        "description_length": 127374.921875,
+        "accuracy": 0.31107431650161743
+    },
+    {
+        "cross_entropy_loss": 6362.83203125,
+        "KL_divergence": 120982.25,
+        "description_length": 127345.078125,
+        "accuracy": 0.3109597861766815
+    },
+    {
+        "cross_entropy_loss": 6409.078125,
+        "KL_divergence": 120921.0546875,
+        "description_length": 127330.1328125,
+        "accuracy": 0.310654878616333
+    },
+    {
+        "cross_entropy_loss": 6323.8505859375,
+        "KL_divergence": 120855.953125,
+        "description_length": 127179.8046875,
+        "accuracy": 0.31069010496139526
+    },
+    {
+        "cross_entropy_loss": 6302.2802734375,
+        "KL_divergence": 120793.390625,
+        "description_length": 127095.671875,
+        "accuracy": 0.3109799027442932
+    },
+    {
+        "cross_entropy_loss": 6355.9658203125,
+        "KL_divergence": 120732.5703125,
+        "description_length": 127088.53125,
+        "accuracy": 0.31062382459640503
+    },
+    {
+        "cross_entropy_loss": 6388.4833984375,
+        "KL_divergence": 120675.0859375,
+        "description_length": 127063.5703125,
+        "accuracy": 0.3108713626861572
+    },
+    {
+        "cross_entropy_loss": 6456.291015625,
+        "KL_divergence": 120618.1953125,
+        "description_length": 127074.484375,
+        "accuracy": 0.31046998500823975
+    },
+    {
+        "cross_entropy_loss": 6418.767578125,
+        "KL_divergence": 120560.0546875,
+        "description_length": 126978.828125,
+        "accuracy": 0.3105084300041199
+    },
+    {
+        "cross_entropy_loss": 6403.2490234375,
+        "KL_divergence": 120503.125,
+        "description_length": 126906.375,
+        "accuracy": 0.3107340335845947
+    },
+    {
+        "cross_entropy_loss": 6352.5048828125,
+        "KL_divergence": 120443.8515625,
+        "description_length": 126796.359375,
+        "accuracy": 0.3109421133995056
+    },
+    {
+        "cross_entropy_loss": 6332.44580078125,
+        "KL_divergence": 120385.09375,
+        "description_length": 126717.5390625,
+        "accuracy": 0.31087005138397217
+    },
+    {
+        "cross_entropy_loss": 6445.9892578125,
+        "KL_divergence": 120327.0703125,
+        "description_length": 126773.0625,
+        "accuracy": 0.3106147348880768
+    },
+    {
+        "cross_entropy_loss": 6328.81884765625,
+        "KL_divergence": 120266.5234375,
+        "description_length": 126595.34375,
+        "accuracy": 0.31095415353775024
+    },
+    {
+        "cross_entropy_loss": 6441.5478515625,
+        "KL_divergence": 120206.2734375,
+        "description_length": 126647.8203125,
+        "accuracy": 0.31064194440841675
+    },
+    {
+        "cross_entropy_loss": 6402.83203125,
+        "KL_divergence": 120145.0234375,
+        "description_length": 126547.8515625,
+        "accuracy": 0.3108850121498108
+    },
+    {
+        "cross_entropy_loss": 6385.625,
+        "KL_divergence": 120083.9140625,
+        "description_length": 126469.5390625,
+        "accuracy": 0.31090787053108215
+    },
+    {
+        "cross_entropy_loss": 6365.4462890625,
+        "KL_divergence": 120025.8203125,
+        "description_length": 126391.265625,
+        "accuracy": 0.31089138984680176
+    },
+    {
+        "cross_entropy_loss": 6319.4345703125,
+        "KL_divergence": 119966.2890625,
+        "description_length": 126285.7265625,
+        "accuracy": 0.31099480390548706
+    },
+    {
+        "cross_entropy_loss": 6367.76953125,
+        "KL_divergence": 119908.7890625,
+        "description_length": 126276.5625,
+        "accuracy": 0.310757040977478
+    },
+    {
+        "cross_entropy_loss": 6476.1318359375,
+        "KL_divergence": 119854.4453125,
+        "description_length": 126330.578125,
+        "accuracy": 0.3104051947593689
+    },
+    {
+        "cross_entropy_loss": 6433.0576171875,
+        "KL_divergence": 119798.9921875,
+        "description_length": 126232.046875,
+        "accuracy": 0.3107408285140991
+    },
+    {
+        "cross_entropy_loss": 6339.5048828125,
+        "KL_divergence": 119742.7265625,
+        "description_length": 126082.234375,
+        "accuracy": 0.3106735348701477
+    },
+    {
+        "cross_entropy_loss": 6378.4375,
+        "KL_divergence": 119685.6640625,
+        "description_length": 126064.1015625,
+        "accuracy": 0.3106081783771515
+    },
+    {
+        "cross_entropy_loss": 6453.8251953125,
+        "KL_divergence": 119624.6015625,
+        "description_length": 126078.4296875,
+        "accuracy": 0.3108106851577759
+    },
+    {
+        "cross_entropy_loss": 6431.6044921875,
+        "KL_divergence": 119567.3515625,
+        "description_length": 125998.953125,
+        "accuracy": 0.3106248378753662
+    },
+    {
+        "cross_entropy_loss": 6378.8046875,
+        "KL_divergence": 119504.53125,
+        "description_length": 125883.3359375,
+        "accuracy": 0.3110693097114563
+    },
+    {
+        "cross_entropy_loss": 6394.04443359375,
+        "KL_divergence": 119439.03125,
+        "description_length": 125833.078125,
+        "accuracy": 0.31078752875328064
+    },
+    {
+        "cross_entropy_loss": 6319.6513671875,
+        "KL_divergence": 119378.546875,
+        "description_length": 125698.203125,
+        "accuracy": 0.31105756759643555
+    },
+    {
+        "cross_entropy_loss": 6330.5498046875,
+        "KL_divergence": 119318.2109375,
+        "description_length": 125648.765625,
+        "accuracy": 0.3109082877635956
+    },
+    {
+        "cross_entropy_loss": 6429.2421875,
+        "KL_divergence": 119258.8359375,
+        "description_length": 125688.078125,
+        "accuracy": 0.3110021948814392
+    },
+    {
+        "cross_entropy_loss": 6447.92431640625,
+        "KL_divergence": 119201.9453125,
+        "description_length": 125649.8671875,
+        "accuracy": 0.31129252910614014
+    },
+    {
+        "cross_entropy_loss": 6368.09765625,
+        "KL_divergence": 119147.40625,
+        "description_length": 125515.5,
+        "accuracy": 0.3106323182582855
+    },
+    {
+        "cross_entropy_loss": 6415.0166015625,
+        "KL_divergence": 119095.0234375,
+        "description_length": 125510.046875,
+        "accuracy": 0.3106713891029358
+    },
+    {
+        "cross_entropy_loss": 6371.12109375,
+        "KL_divergence": 119040.5234375,
+        "description_length": 125411.640625,
+        "accuracy": 0.3110686242580414
+    },
+    {
+        "cross_entropy_loss": 6417.98388671875,
+        "KL_divergence": 118980.65625,
+        "description_length": 125398.640625,
+        "accuracy": 0.31054604053497314
+    },
+    {
+        "cross_entropy_loss": 6416.32958984375,
+        "KL_divergence": 118921.4296875,
+        "description_length": 125337.765625,
+        "accuracy": 0.310913622379303
+    },
+    {
+        "cross_entropy_loss": 6374.9189453125,
+        "KL_divergence": 118863.9453125,
+        "description_length": 125238.859375,
+        "accuracy": 0.31103524565696716
+    },
+    {
+        "cross_entropy_loss": 6410.3056640625,
+        "KL_divergence": 118808.9140625,
+        "description_length": 125219.21875,
+        "accuracy": 0.31081730127334595
+    },
+    {
+        "cross_entropy_loss": 6383.28076171875,
+        "KL_divergence": 118753.7109375,
+        "description_length": 125136.9921875,
+        "accuracy": 0.3107408285140991
+    },
+    {
+        "cross_entropy_loss": 6383.5830078125,
+        "KL_divergence": 118698.34375,
+        "description_length": 125081.921875,
+        "accuracy": 0.31088125705718994
+    },
+    {
+        "cross_entropy_loss": 6407.3955078125,
+        "KL_divergence": 118641.8515625,
+        "description_length": 125049.25,
+        "accuracy": 0.3106021285057068
+    },
+    {
+        "cross_entropy_loss": 6377.5830078125,
+        "KL_divergence": 118589.4609375,
+        "description_length": 124967.046875,
+        "accuracy": 0.31101223826408386
+    },
+    {
+        "cross_entropy_loss": 6541.421875,
+        "KL_divergence": 118532.546875,
+        "description_length": 125073.96875,
+        "accuracy": 0.31052321195602417
+    },
+    {
+        "cross_entropy_loss": 6448.8603515625,
+        "KL_divergence": 118475.2578125,
+        "description_length": 124924.1171875,
+        "accuracy": 0.3105766773223877
+    },
+    {
+        "cross_entropy_loss": 6461.5068359375,
+        "KL_divergence": 118420.9453125,
+        "description_length": 124882.453125,
+        "accuracy": 0.31084752082824707
+    },
+    {
+        "cross_entropy_loss": 6348.44091796875,
+        "KL_divergence": 118367.2421875,
+        "description_length": 124715.6875,
+        "accuracy": 0.3110901117324829
+    },
+    {
+        "cross_entropy_loss": 6385.3779296875,
+        "KL_divergence": 118313.8125,
+        "description_length": 124699.1875,
+        "accuracy": 0.31082504987716675
+    },
+    {
+        "cross_entropy_loss": 6381.68212890625,
+        "KL_divergence": 118261.96875,
+        "description_length": 124643.65625,
+        "accuracy": 0.31076252460479736
+    },
+    {
+        "cross_entropy_loss": 6372.3388671875,
+        "KL_divergence": 118207.65625,
+        "description_length": 124580.0,
+        "accuracy": 0.3108220100402832
+    },
+    {
+        "cross_entropy_loss": 6398.24609375,
+        "KL_divergence": 118151.0625,
+        "description_length": 124549.3046875,
+        "accuracy": 0.3105398714542389
+    },
+    {
+        "cross_entropy_loss": 6348.4296875,
+        "KL_divergence": 118095.34375,
+        "description_length": 124443.7734375,
+        "accuracy": 0.31073492765426636
+    },
+    {
+        "cross_entropy_loss": 6315.6455078125,
+        "KL_divergence": 118042.46875,
+        "description_length": 124358.109375,
+        "accuracy": 0.31094813346862793
+    },
+    {
+        "cross_entropy_loss": 6470.732421875,
+        "KL_divergence": 117984.359375,
+        "description_length": 124455.09375,
+        "accuracy": 0.31045225262641907
+    },
+    {
+        "cross_entropy_loss": 6339.0888671875,
+        "KL_divergence": 117927.765625,
+        "description_length": 124266.8515625,
+        "accuracy": 0.3108465075492859
+    },
+    {
+        "cross_entropy_loss": 6511.6982421875,
+        "KL_divergence": 117873.6796875,
+        "description_length": 124385.375,
+        "accuracy": 0.31057366728782654
+    },
+    {
+        "cross_entropy_loss": 6402.97998046875,
+        "KL_divergence": 117816.6328125,
+        "description_length": 124219.609375,
+        "accuracy": 0.31111741065979004
+    },
+    {
+        "cross_entropy_loss": 6394.88330078125,
+        "KL_divergence": 117762.703125,
+        "description_length": 124157.5859375,
+        "accuracy": 0.31075936555862427
+    },
+    {
+        "cross_entropy_loss": 6433.00146484375,
+        "KL_divergence": 117710.7890625,
+        "description_length": 124143.7890625,
+        "accuracy": 0.31069010496139526
+    },
+    {
+        "cross_entropy_loss": 6348.865234375,
+        "KL_divergence": 117657.8203125,
+        "description_length": 124006.6875,
+        "accuracy": 0.31104618310928345
+    },
+    {
+        "cross_entropy_loss": 6424.791015625,
+        "KL_divergence": 117604.2734375,
+        "description_length": 124029.0625,
+        "accuracy": 0.3108493387699127
+    },
+    {
+        "cross_entropy_loss": 6397.7646484375,
+        "KL_divergence": 117550.4453125,
+        "description_length": 123948.2109375,
+        "accuracy": 0.31070947647094727
+    },
+    {
+        "cross_entropy_loss": 6286.2392578125,
+        "KL_divergence": 117496.1484375,
+        "description_length": 123782.390625,
+        "accuracy": 0.31104975938796997
+    },
+    {
+        "cross_entropy_loss": 6374.583984375,
+        "KL_divergence": 117444.0625,
+        "description_length": 123818.640625,
+        "accuracy": 0.3113033175468445
+    },
+    {
+        "cross_entropy_loss": 6455.51171875,
+        "KL_divergence": 117389.8515625,
+        "description_length": 123845.359375,
+        "accuracy": 0.3108493983745575
+    },
+    {
+        "cross_entropy_loss": 6499.865234375,
+        "KL_divergence": 117333.7578125,
+        "description_length": 123833.625,
+        "accuracy": 0.31069567799568176
+    },
+    {
+        "cross_entropy_loss": 6430.1748046875,
+        "KL_divergence": 117277.1640625,
+        "description_length": 123707.34375,
+        "accuracy": 0.3111000657081604
+    },
+    {
+        "cross_entropy_loss": 6402.2021484375,
+        "KL_divergence": 117223.8984375,
+        "description_length": 123626.1015625,
+        "accuracy": 0.3108328580856323
+    },
+    {
+        "cross_entropy_loss": 6424.779296875,
+        "KL_divergence": 117169.9453125,
+        "description_length": 123594.7265625,
+        "accuracy": 0.3106992840766907
+    },
+    {
+        "cross_entropy_loss": 6398.716796875,
+        "KL_divergence": 117120.1015625,
+        "description_length": 123518.8125,
+        "accuracy": 0.3109370470046997
+    },
+    {
+        "cross_entropy_loss": 6394.27587890625,
+        "KL_divergence": 117069.2578125,
+        "description_length": 123463.53125,
+        "accuracy": 0.3108752369880676
+    },
+    {
+        "cross_entropy_loss": 6465.234375,
+        "KL_divergence": 117019.9140625,
+        "description_length": 123485.1484375,
+        "accuracy": 0.3107900023460388
+    },
+    {
+        "cross_entropy_loss": 6506.939453125,
+        "KL_divergence": 116968.7265625,
+        "description_length": 123475.6640625,
+        "accuracy": 0.31058037281036377
+    },
+    {
+        "cross_entropy_loss": 6486.3828125,
+        "KL_divergence": 116915.3125,
+        "description_length": 123401.6875,
+        "accuracy": 0.31071799993515015
+    },
+    {
+        "cross_entropy_loss": 6407.83984375,
+        "KL_divergence": 116861.9765625,
+        "description_length": 123269.8125,
+        "accuracy": 0.31059062480926514
+    },
+    {
+        "cross_entropy_loss": 6378.7919921875,
+        "KL_divergence": 116810.515625,
+        "description_length": 123189.3046875,
+        "accuracy": 0.310710608959198
+    },
+    {
+        "cross_entropy_loss": 6434.66650390625,
+        "KL_divergence": 116754.3671875,
+        "description_length": 123189.03125,
+        "accuracy": 0.3109869360923767
+    },
+    {
+        "cross_entropy_loss": 6382.87060546875,
+        "KL_divergence": 116702.484375,
+        "description_length": 123085.359375,
+        "accuracy": 0.31119197607040405
+    },
+    {
+        "cross_entropy_loss": 6432.48095703125,
+        "KL_divergence": 116651.3984375,
+        "description_length": 123083.8828125,
+        "accuracy": 0.31066304445266724
+    },
+    {
+        "cross_entropy_loss": 6327.232421875,
+        "KL_divergence": 116599.046875,
+        "description_length": 122926.28125,
+        "accuracy": 0.3111675977706909
+    },
+    {
+        "cross_entropy_loss": 6367.32421875,
+        "KL_divergence": 116545.2109375,
+        "description_length": 122912.53125,
+        "accuracy": 0.3106866478919983
+    },
+    {
+        "cross_entropy_loss": 6333.40234375,
+        "KL_divergence": 116493.3515625,
+        "description_length": 122826.75,
+        "accuracy": 0.31108829379081726
+    },
+    {
+        "cross_entropy_loss": 6394.671875,
+        "KL_divergence": 116444.359375,
+        "description_length": 122839.03125,
+        "accuracy": 0.31085336208343506
+    },
+    {
+        "cross_entropy_loss": 6367.86669921875,
+        "KL_divergence": 116395.34375,
+        "description_length": 122763.203125,
+        "accuracy": 0.3104308843612671
+    },
+    {
+        "cross_entropy_loss": 6455.1826171875,
+        "KL_divergence": 116349.15625,
+        "description_length": 122804.3359375,
+        "accuracy": 0.3107563853263855
+    },
+    {
+        "cross_entropy_loss": 6428.36328125,
+        "KL_divergence": 116301.96875,
+        "description_length": 122730.3359375,
+        "accuracy": 0.31095001101493835
+    },
+    {
+        "cross_entropy_loss": 6371.984375,
+        "KL_divergence": 116254.1953125,
+        "description_length": 122626.1796875,
+        "accuracy": 0.3109438419342041
+    },
+    {
+        "cross_entropy_loss": 6450.4697265625,
+        "KL_divergence": 116204.7734375,
+        "description_length": 122655.2421875,
+        "accuracy": 0.3104252815246582
+    },
+    {
+        "cross_entropy_loss": 6405.75390625,
+        "KL_divergence": 116152.6484375,
+        "description_length": 122558.40625,
+        "accuracy": 0.31090331077575684
+    },
+    {
+        "cross_entropy_loss": 6366.2939453125,
+        "KL_divergence": 116099.578125,
+        "description_length": 122465.875,
+        "accuracy": 0.31090933084487915
+    },
+    {
+        "cross_entropy_loss": 6359.1923828125,
+        "KL_divergence": 116046.125,
+        "description_length": 122405.3125,
+        "accuracy": 0.31085842847824097
+    },
+    {
+        "cross_entropy_loss": 6545.921875,
+        "KL_divergence": 115993.453125,
+        "description_length": 122539.375,
+        "accuracy": 0.3106318712234497
+    },
+    {
+        "cross_entropy_loss": 6339.830078125,
+        "KL_divergence": 115939.6796875,
+        "description_length": 122279.5078125,
+        "accuracy": 0.31090718507766724
+    },
+    {
+        "cross_entropy_loss": 6417.669921875,
+        "KL_divergence": 115884.65625,
+        "description_length": 122302.328125,
+        "accuracy": 0.3108785152435303
+    },
+    {
+        "cross_entropy_loss": 6408.71875,
+        "KL_divergence": 115831.4765625,
+        "description_length": 122240.1953125,
+        "accuracy": 0.31094539165496826
+    },
+    {
+        "cross_entropy_loss": 6423.08544921875,
+        "KL_divergence": 115776.703125,
+        "description_length": 122199.78125,
+        "accuracy": 0.31076425313949585
+    },
+    {
+        "cross_entropy_loss": 6469.7919921875,
+        "KL_divergence": 115723.578125,
+        "description_length": 122193.3671875,
+        "accuracy": 0.31088775396347046
+    },
+    {
+        "cross_entropy_loss": 6501.8203125,
+        "KL_divergence": 115670.984375,
+        "description_length": 122172.8046875,
+        "accuracy": 0.3108386993408203
+    },
+    {
+        "cross_entropy_loss": 6389.40478515625,
+        "KL_divergence": 115621.609375,
+        "description_length": 122011.015625,
+        "accuracy": 0.3110494911670685
+    },
+    {
+        "cross_entropy_loss": 6379.0400390625,
+        "KL_divergence": 115570.765625,
+        "description_length": 121949.8046875,
+        "accuracy": 0.3112044334411621
+    },
+    {
+        "cross_entropy_loss": 6398.171875,
+        "KL_divergence": 115517.875,
+        "description_length": 121916.046875,
+        "accuracy": 0.31068432331085205
+    },
+    {
+        "cross_entropy_loss": 6369.8955078125,
+        "KL_divergence": 115464.1640625,
+        "description_length": 121834.0625,
+        "accuracy": 0.31091707944869995
+    },
+    {
+        "cross_entropy_loss": 6394.076171875,
+        "KL_divergence": 115412.390625,
+        "description_length": 121806.46875,
+        "accuracy": 0.311137318611145
+    },
+    {
+        "cross_entropy_loss": 6431.6962890625,
+        "KL_divergence": 115360.84375,
+        "description_length": 121792.5390625,
+        "accuracy": 0.31090617179870605
+    },
+    {
+        "cross_entropy_loss": 6425.4912109375,
+        "KL_divergence": 115309.6796875,
+        "description_length": 121735.171875,
+        "accuracy": 0.3108748197555542
+    },
+    {
+        "cross_entropy_loss": 6447.427734375,
+        "KL_divergence": 115262.46875,
+        "description_length": 121709.890625,
+        "accuracy": 0.31090888381004333
+    },
+    {
+        "cross_entropy_loss": 6390.7333984375,
+        "KL_divergence": 115212.5546875,
+        "description_length": 121603.2890625,
+        "accuracy": 0.3108920753002167
+    },
+    {
+        "cross_entropy_loss": 6497.55859375,
+        "KL_divergence": 115164.6484375,
+        "description_length": 121662.203125,
+        "accuracy": 0.3105447590351105
+    },
+    {
+        "cross_entropy_loss": 6366.85205078125,
+        "KL_divergence": 115117.734375,
+        "description_length": 121484.59375,
+        "accuracy": 0.3109310269355774
+    },
+    {
+        "cross_entropy_loss": 6387.345703125,
+        "KL_divergence": 115068.203125,
+        "description_length": 121455.546875,
+        "accuracy": 0.31076571345329285
+    },
+    {
+        "cross_entropy_loss": 6438.5224609375,
+        "KL_divergence": 115021.0703125,
+        "description_length": 121459.59375,
+        "accuracy": 0.31104761362075806
+    },
+    {
+        "cross_entropy_loss": 6481.9931640625,
+        "KL_divergence": 114975.09375,
+        "description_length": 121457.0859375,
+        "accuracy": 0.31065988540649414
+    },
+    {
+        "cross_entropy_loss": 6433.72705078125,
+        "KL_divergence": 114931.1328125,
+        "description_length": 121364.859375,
+        "accuracy": 0.3108338713645935
+    }
+]

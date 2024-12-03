@@ -222,7 +222,8 @@ class Trainer:
         if variational:
             bayes_modules = list(get_kl_modules(self.model))
 
-        for batch in tqdm(train_loader, leave=False, desc="training batch"):
+        # for batch in tqdm(train_loader, leave=False, desc="training batch"):
+        for batch in train_loader:
             optimizer.zero_grad()
             self.model.train()
 
@@ -337,7 +338,8 @@ class Trainer:
                 device = next(self.model.parameters()).device
 
                 metrics = []
-                for batch in tqdm(val_loader, leave=False, desc="eval batch"):
+                # for batch in tqdm(val_loader, leave=False, desc="eval batch"):
+                for batch in val_loader:
                     self.model.train()
 
                     output = self._forward(batch, device=device)
@@ -358,3 +360,4 @@ class Trainer:
         else:
             warnings.warn("No validation data provided, return empty val metrics", UserWarning)
             return {}
+
