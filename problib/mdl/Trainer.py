@@ -32,7 +32,9 @@ class Trainer:
         optimizer=None,
         variational=None,
         lr=None,
+        ignore_index=None,
         evaluate_every=-1,  # -1 for no evaluation
+        KL_weight=1,
     ):
 
         """
@@ -58,6 +60,10 @@ class Trainer:
             Learning rate for the optimizer. Defaults to 1e-3 if not specified.
         evaluate_every : int, optional
             Frequency of evaluation during training. Defaults to -1 (no evaluation).
+        ignore_index : int, optional
+            Index to ignore in the loss function. Defaults defaults to the value in train_config or None.
+        KL_weight : float, optional
+            Weight for the KL term in the loss function. Defaults to 1 if not specified.
 
         Returns
         -------
@@ -128,8 +134,13 @@ class Trainer:
             loss_function = "crossentropy"
             self.train_config["loss_function"] = loss_function
 
+        if ignore_index is None:
+            ignore_index = self.train_config.get("ignore_index", None)
+        else:
+            self.train_config["ignore_index"] = ignore_index
+
         if loss_function == "crossentropy":
-            loss_function = nn.CrossEntropyLoss()
+            loss_function = nn.CrossEntropyLoss(ignore_index=ignore_index, reduction="sum")
         elif loss_function == "mse":
             loss_function = nn.MSELoss()
         else:
@@ -158,6 +169,8 @@ class Trainer:
             warnings.warn("No evaluate_every provided. Defaulting to -1 (no evaluation)", UserWarning)
             evaluate_every = -1
 
+        self.KL_weight = KL_weight
+
         losses = []
         metrics = []
 
@@ -170,7 +183,7 @@ class Trainer:
             losses.extend(losses_epoch)
 
             if evaluate_every > 0 and (epoch + 1) % evaluate_every == 0:
-                epoch_metrics = self.evaluate(val_loader, loss_function)
+                epoch_metrics = self.evaluate(val_loader)
                 metrics.append(epoch_metrics)
 
         self._metrics = metrics
@@ -219,7 +232,7 @@ class Trainer:
 
             if variational:
                 kl_loss = sum([m.kl_divergence() for m in bayes_modules])
-                loss = loss + kl_loss
+                loss = loss + kl_loss * self.KL_weight
 
             loss.backward()
             optimizer.step()
@@ -272,11 +285,25 @@ class Trainer:
 
         for m in metrics_to_calulate:
             if m == "description_length":
-                ce_part = nn.CrossEntropyLoss()(output.view(-1, output.shape[-1]), batch[-1].to(device).view(-1)).detach().cpu().numpy()
+                ce_part = nn.CrossEntropyLoss(ignore_index=self.train_config["ignore_index"], reduction="sum")(output.view(-1, output.shape[-1]), batch[-1].to(device).view(-1)).detach().cpu().numpy()
                 kl_part = self.model.kl_divergence().detach().cpu().numpy()
+                metrics["cross_entropy_loss"] = ce_part
+                metrics["KL_divergence"] = kl_part
                 metrics[m] = ce_part + kl_part
             elif m == "accuracy":
                 metrics[m] = (output.argmax(dim=-1) == batch[-1].to(device)).float().mean().detach().cpu().numpy()
+            elif m == "loss" or m == "cross_entropy_loss":
+                loss_function = self.train_config.get("loss_function", None)
+                if loss_function is not None and "description_length" not in metrics_to_calulate:
+                    if isinstance(loss_function, str):
+                        if loss_function == "crossentropy":
+                            loss_function = nn.CrossEntropyLoss(ignore_index=self.train_config["ignore_index"], reduction="sum")
+                        elif loss_function == "mse":
+                            loss_function = nn.MSELoss(reduction="sum")
+                        else:
+                            raise ValueError(f"Unknown loss function: {loss_function}")
+                    loss = loss_function(output.view(-1, output.shape[-1]), batch[-1].to(device).view(-1))
+                    metrics[m] = loss.detach().cpu().numpy()
             else:
                 warnings.warn(f"Unknown metric: {m}", UserWarning)
         
@@ -284,8 +311,7 @@ class Trainer:
 
     def evaluate(
         self,
-        val_loader=None,
-        loss_function=None,
+        val_loader=None
     ):  
         """
         Evaluates the model on the given validation data.
@@ -294,14 +320,12 @@ class Trainer:
         ----------
         val_loader : torch.utils.data.DataLoader, optional
             The validation data loader. If not provided, evaluation is skipped and empty validation metrics are returned.
-        loss_function : callable or str, optional
-            The loss function to use for evaluation. If not provided, the loss function specified in the training configuration is used.
 
         Returns
         -------
         dict
             A dictionary containing the mean validation metrics.
-        
+            
         Warnings
         --------
         UserWarning
@@ -320,24 +344,14 @@ class Trainer:
                     
                     batch_metrics = self._calulate_metrics(output, batch, device)
 
-                    if loss_function is None:
-                        loss_function = self.train_config.get("loss_function", None)
-                    if not self.train_config.get("variational", False) and loss_function is not None:
-                        if isinstance(loss_function, str):
-                            if loss_function == "crossentropy":
-                                loss_function = nn.CrossEntropyLoss()
-                            elif loss_function == "mse":
-                                loss_function = nn.MSELoss()
-                            else:
-                                raise ValueError(f"Unknown loss function: {loss_function}")
-                        loss = loss_function(output.view(-1, output.shape[-1]), batch[-1].to(device).view(-1))
-                        batch_metrics["loss"] = loss
-
                     metrics.append(batch_metrics)
 
                 metrics_mean = {}
-                for metric in self.train_config.get("eval_metrics", []):
+                for metric in metrics[0].keys():
                     metrics_mean[metric] = np.mean([m[metric] for m in metrics])
+                    if metric == "description_length":
+                        metrics_mean["cross_entropy_loss"] = np.mean([m["cross_entropy_loss"] for m in metrics])
+                        metrics_mean["KL_divergence"] = np.mean([m["KL_divergence"] for m in metrics])
 
                 return metrics_mean
 
